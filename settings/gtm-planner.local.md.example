@@ -1,0 +1,43 @@
+# GTM Planner — Journey State
+
+Copy this file to `.claude/gtm-planner.local.md` in your project. The planner
+reads and updates it so you can resume your plan across sessions without
+repeating steps.
+
+## Company
+
+- **Name:**
+- **Website:**
+- **One-line description:**
+- **Primary market / geography:**
+
+## Journey progress
+
+| Step | Status | Confirmed on | Output location |
+|------|--------|--------------|-----------------|
+| 1. Intake — Business Snapshot | not started | | |
+| 2. Market Map | not started | | |
+| 3. Positioning Architecture | not started | | |
+| 4. Demand Plan | not started | | |
+| 5. Roadmap + GTM Plan | not started | | |
+
+Statuses: `not started` / `draft` / `confirmed`
+
+## Open questions
+
+### Resolved
+<!-- Move questions here once answered, with the answer. The planner treats these as facts. -->
+
+### Pending
+<!-- The planner appends open questions here: [type] question — recommendation -->
+
+## Connected sources
+
+- HubSpot: no
+- Notion: no
+- Similarweb: no
+- Ahrefs: no
+- Materials provided (decks, docs, URLs):
+
+## Notes
+<!-- Anything the planner should remember between sessions. -->
