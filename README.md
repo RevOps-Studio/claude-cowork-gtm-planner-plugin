@@ -60,12 +60,17 @@ share. Each connector adds grounding:
 |-----------|--------------|---------|
 | **HubSpot** | Your real funnel: sources, conversion, cycle, deal sizes | Steps 1, 4 |
 | **Notion** | Saves your GTM Plan and roadmap where your team works | Step 5 |
-| **Similarweb** | Competitor traffic scale and channel mix | Steps 2, 4 |
-| **Ahrefs** | Competitor organic footprint, keyword reality | Steps 2, 4 |
+| **Similarweb** | Competitor traffic scale and channel mix. Requires API access (paid plan) | Steps 2, 4 |
+| **Ahrefs** | Competitor organic footprint, keyword reality. Requires API access (paid plan) | Steps 2, 4 |
 | Google Drive (native) | Your decks and docs as intake material | Step 1 |
 
-None is required. When a connected tool would improve a number, the planner
-says so in one line and keeps moving.
+None is required. Before researching, the market-map and demand-plan steps
+run a **source readiness check**: they show which sources are available,
+what each missing one costs in precision, and let you choose — web-based
+deep research as fallback, connect the tool, or provide the data yourself.
+Estimates are always labeled as estimates.
+
+Run `/gtm-planner:setup` after installing for a guided walkthrough.
 
 ## Quick start
 
@@ -85,7 +90,7 @@ lives in `.claude/gtm-planner.local.md` in your project (template in
 `settings/`).
 
 ```
-skills/     intake · market-map · positioning · demand-plan · roadmap
+skills/     setup · intake · market-map · positioning · demand-plan · roadmap
 agents/     materials-analyst · market-researcher · benchmark-researcher · plan-qa
 commands/   plan · intake · market-map · positioning · demand-plan · roadmap
 ```
