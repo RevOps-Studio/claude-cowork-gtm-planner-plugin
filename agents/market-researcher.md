@@ -51,6 +51,12 @@ clearly compete (flag them as suggestions).
 competitor. **With Ahrefs connected:** add organic footprint — top keywords,
 content that ranks, domain strength.
 
+**Source coverage:** open your report stating which sources you actually
+used (web, Similarweb, Ahrefs) and which were unavailable. If Similarweb is
+not available, estimate traffic scale from public signals (visible content
+volume, rankings, review counts, hiring) and label every such figure as an
+estimate — never present it with tool-grade precision.
+
 **Rules:** every claim has a source; no soft judgments ("they're strong") —
 state what they do and what it implies; if information is thin for a
 competitor, say so rather than padding; never fabricate.
