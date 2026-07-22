@@ -49,32 +49,39 @@ Respond in the language the user is writing in.
    Snapshot. If no snapshot exists, say the map will be weaker without it,
    offer to run intake first, and proceed only if the user prefers —
    marking the limitation in the output.
-2. **Frame the search.** From the snapshot: who does the user name as
+2. **Source readiness check.** Before any research, run the check in
+   `references/source-readiness.md`: inventory which sources are actually
+   available (Similarweb and Ahrefs need paid API access — many users will
+   not have them), show the user what tier of analysis each data need will
+   get, and let them choose per gap: proceed with web-based deep research
+   as fallback, connect the tool, or provide the data manually. Record the
+   choices in the journey state.
+3. **Frame the search.** From the snapshot: who does the user name as
    competitors? What job does the offer do? What would buyers do without it?
-3. **Dispatch the market-researcher agent** with the company context and
+4. **Dispatch the market-researcher agent** with the company context and
    competitor candidates. It researches autonomously and returns findings
    with sources. If Similarweb/Ahrefs are connected it enriches with traffic
    and organic footprint data.
-4. **Build the three-layer map** and select the 3–5 priority competitors —
+5. **Build the three-layer map** and select the 3–5 priority competitors —
    most relevant to this company's decisions, not largest.
-5. **Analyze each priority competitor:** narrative category claimed, core
+6. **Analyze each priority competitor:** narrative category claimed, core
    promise, apparent ICP, differentiation mechanism, visible strengths,
    observable vulnerabilities, sources.
-6. **Synthesize the positioning map:** the 2–3 axes on which this market
+7. **Synthesize the positioning map:** the 2–3 axes on which this market
    actually differentiates, who holds which position, where the user's
    company sits today (honestly — even if they believe otherwise), and the
    open spaces labeled `[GAP]` or `[GAP HYPOTHESIS]`.
-7. **Draft 2–3 positioning hypotheses** for the next step — directions with
+8. **Draft 2–3 positioning hypotheses** for the next step — directions with
    an argument, not decisions.
-8. **Coherence check:** are the priority competitors the ones the snapshot
+9. **Coherence check:** are the priority competitors the ones the snapshot
    pointed to? Is every gap tested against `gap-vs-hole.md`? Any competitor
    ignored by default that should be here?
-9. **Present the Market Map + open questions.** On confirmation, update the
+10. **Present the Market Map + open questions.** On confirmation, update the
    journey state and point to `/gtm-planner:positioning`.
 
 ## Output structure
 
-Executive summary (max 250 words) → Market definition (narrative categories
+Sources used (one line) → Executive summary (max 250 words) → Market definition (narrative categories
 in play, job to be done, non-competitive alternatives) → Three-layer map →
 Priority competitor analysis (3–5) → Positioning map (axes, occupied
 positions, the company today, gaps) → Category dynamics (trends, emerging
