@@ -1,6 +1,6 @@
 {
   "name": "gtm-planner",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Go-to-Market Planner — build a defensible go-to-market plan (positioning, demand engines, and a 90-day roadmap) with the Go2Rev methodology by RevOps Studio.",
   "author": {
     "name": "RevOps Studio",
