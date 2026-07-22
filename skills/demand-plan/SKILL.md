@@ -52,31 +52,37 @@ Respond in the language the user is writing in.
    works operationally, funnel stage covered, inputs required, outputs
    produced, 3–5 health indicators, operating requirements, honest time to
    first result.
-4. **Dispatch the benchmark-researcher agent** for the sector/channel
+4. **Source readiness check.** Before benchmark research, run the check in
+   `../market-map/references/source-readiness.md` (same pattern): confirm
+   which of HubSpot, Ahrefs, Similarweb are actually authorized, tell the
+   user what each unavailable source costs in precision, and offer the
+   choice — web-research fallback, connect now, or manual data. Record in
+   the journey state.
+5. **Dispatch the benchmark-researcher agent** for the sector/channel
    benchmarks the design needs. If HubSpot is connected, calibrate against
    the real funnel; if Ahrefs/Similarweb are connected, ground organic and
    competitor-traffic assumptions.
-5. **Translate engines into a channel mix** (3–6 channels). For each channel:
+6. **Translate engines into a channel mix** (3–6 channels). For each channel:
    which engine it serves, funnel function, weight (high/medium/low), phase
    (first 90 days / next quarter / later), organic vs. paid split and its
    logic, dominant messages (from the positioning pillars), indicative
    monthly investment range with stated assumptions, 3–5 health KPIs.
    Channel functions reference: `references/channel-functions.md`.
-6. **Sequence activation.** Not everything starts at once: which engines and
+7. **Sequence activation.** Not everything starts at once: which engines and
    channels start in the first 90 days, which follow, and what each later
    activation is conditional on.
-7. **State what this demand plan does NOT solve** — lead qualification
+8. **State what this demand plan does NOT solve** — lead qualification
    handoff, sales process, measurement infrastructure — explicitly, one
    short section. These belong to execution readiness in the final plan.
-8. **Coherence check:** engines consistent with positioning? Mix operable
+9. **Coherence check:** engines consistent with positioning? Mix operable
    within declared constraints? Funnel fully covered? Every number sourced
    or flagged?
-9. **Present + open questions.** On confirmation, update journey state and
+10. **Present + open questions.** On confirmation, update journey state and
    point to `/gtm-planner:roadmap`.
 
 ## Output structure
 
-Executive summary → Starting point (current funnel, constraints) → Design
+Sources used (one line) → Executive summary → Starting point (current funnel, constraints) → Design
 principles (2–3, named) → Engine architecture (map, funnel coverage, how
 engines feed each other) → Engine detail (3–5) → Channel mix (table +
 per-channel detail) → Activation sequence → Operating requirements (team,
