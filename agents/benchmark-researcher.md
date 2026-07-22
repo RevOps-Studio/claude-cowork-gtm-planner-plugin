@@ -47,6 +47,11 @@ results — as close to the user's sector and geography as available.
    difficulty, competitor content performance). With Similarweb connected:
    ground traffic and competitor channel-mix assumptions.
 
+**Source coverage:** open your report stating which sources were used and
+which were unavailable (Ahrefs and Similarweb require paid API access;
+absence is common). Web-researched benchmarks are the normal baseline —
+tool data upgrades precision, it does not gate the work.
+
 **Output format:** a table per channel/engine — metric, range, source, level
 (sector/generic/internal) — followed by calibration notes and the list of
 `needs-benchmark` gaps.
