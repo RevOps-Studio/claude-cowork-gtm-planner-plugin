@@ -29,6 +29,10 @@ Respond in the language the user is writing in, whatever it is.
 - **Never fill gaps with plausible fiction.** If a section has no real data,
   raise an open question of type `missing-data`: what is missing, why it
   matters, how to get it. Then continue with what exists.
+- **Every open question carries a confidence grade.** State how confident
+  the current working answer is (high / medium / low) and what evidence it
+  rests on. This grade travels with the question through every later step
+  and into the final plan's ledger.
 - **Source hierarchy.** When sources conflict (user statement vs. website vs.
   CRM data), prefer: (1) what the user tells you now, (2) live data from
   connected tools, (3) public materials. Surface every conflict as an open
