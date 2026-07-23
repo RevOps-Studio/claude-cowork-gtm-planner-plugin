@@ -1,6 +1,6 @@
 # Go-to-Market Planner
 
-A [RevOps Studio](https://rev-ops.studio) plugin for Claude Cowork.
+A [RevOps Studio](https://rev-ops.studio) plugin for Claude Cowork and Claude Code.
 
 **Build a defensible go-to-market plan — positioning, demand engines, and a
 90-day roadmap — with a methodology, not a template.**
@@ -72,6 +72,14 @@ Estimates are always labeled as estimates.
 
 Run `/gtm-planner:setup` after installing for a guided walkthrough.
 
+## See it before you run it
+
+`sample-output/` contains a complete end-to-end case — a fictional company
+taken through all five steps in zero-connector mode, including the
+consolidated GTM Plan with its assumption & evidence ledger. If you read
+one thing in this repo, read that. A 60–90s walkthrough lives in
+`demo-script.md`.
+
 ## Quick start
 
 1. Install the plugin and open Claude Cowork.
@@ -94,6 +102,36 @@ skills/     setup · intake · market-map · positioning · demand-plan · roadm
 agents/     materials-analyst · market-researcher · benchmark-researcher · plan-qa
 commands/   plan · intake · market-map · positioning · demand-plan · roadmap
 ```
+
+## Why this is not a prompt pack
+
+A prompt pack gives you words; this gives you an order of operations with
+enforcement. The journey is gated — the planner will not advance to
+demand design while the category decision rests on a low-confidence
+assumption, and it will not consolidate a roadmap that ignores what the
+market map flagged. Every output carries its evidence map (what came from
+you, from tools, from cited sources, from inference), every assumption is
+graded and tracked to resolution, and a QA agent checks the whole chain
+for coherence before the final plan is assembled. You can fork the words;
+the discipline is the product.
+
+## Review notes (for marketplace & partner evaluation)
+
+- **What it does:** turns incomplete GTM inputs into a staged, evidence-
+  aware operating plan — five gated decisions, one consolidated document.
+- **What it does not do:** execute campaigns, write outreach at scale, or
+  replace the conversion/deployment/measurement workstreams (it maps them
+  honestly in each plan's Execution Readiness section).
+- **Data it touches:** user-provided materials; optionally HubSpot (read),
+  Notion (write, user-directed), Similarweb/Ahrefs (read). Full detail per
+  connector in `connectors-and-permissions.md`. No credentials handled by
+  the plugin; OAuth is managed by the Claude client.
+- **How it avoids invented data:** source readiness check before research,
+  benchmark rules requiring citations, `needs-benchmark` and confidence
+  grading, and a final ledger where every unresolved assumption is visible.
+- **Uncertainty handling:** open questions with recommendations at every
+  step; gates block silent progress on weak foundations; explicit user
+  overrides are recorded, not hidden.
 
 ## About
 
