@@ -35,11 +35,20 @@ activation sequence, operating requirements.
 The 90-day table in full + the 12-month outline + parked initiatives with
 reasons.
 
-## 7. Open questions
-Every unresolved question from all five steps, grouped by type
-(`missing-data`, `assumption`, `conflict`, `unverified-claim`,
-`needs-benchmark`), each with its recommendation. This section is the
-plan's honesty ledger — do not trim it.
+## 7. Assumption & evidence ledger
+The plan's honesty ledger — do not trim it. Two parts:
+
+**Open questions.** Every unresolved question from all five steps, as a
+table: type (`missing-data`, `assumption`, `conflict`, `unverified-claim`,
+`needs-benchmark`) · question · why it matters · confidence in the current
+working answer (high / medium / low) · evidence behind it · recommendation.
+Low-confidence items that touch category, ICP or engine selection are
+flagged as decision risks.
+
+**Evidence map.** One short table stating where the plan's key inputs came
+from: user-declared · connected tool (named) · public source (cited) ·
+agent inference. A reader must be able to see at a glance what the plan
+stands on.
 
 ## 8. Execution readiness
 Built per `execution-readiness.md`.
