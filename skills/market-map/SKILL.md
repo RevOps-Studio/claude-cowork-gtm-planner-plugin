@@ -6,6 +6,7 @@ description: >
   "/gtm-planner:market-map", or needs competitive and category intelligence
   for a go-to-market plan. Second step of the Go2Rev methodology — reads the
   market so positioning can be decided against it.
+argument-hint: [competitors or market focus]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"

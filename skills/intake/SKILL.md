@@ -6,6 +6,7 @@ description: >
   "/gtm-planner:intake", or describes their company and asks where to begin.
   First step of the Go2Rev methodology — produces the Business Snapshot that
   every later step builds on.
+argument-hint: [company website or context]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"

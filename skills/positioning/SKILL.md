@@ -6,6 +6,7 @@ description: >
   "/gtm-planner:positioning", or needs the strategic positioning and
   messaging architecture of a go-to-market plan. Third step and heart of the
   Go2Rev methodology — decides category, promise, pillars and messages.
+argument-hint: [positioning direction to explore]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"

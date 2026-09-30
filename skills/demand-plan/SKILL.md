@@ -6,6 +6,7 @@ description: >
   "build our demand engines", "/gtm-planner:demand-plan", or needs the
   demand generation layer of a go-to-market plan. Fourth step of the Go2Rev
   methodology — selects demand engines and translates them into a channel mix.
+argument-hint: [constraints or channel preferences]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"

@@ -6,6 +6,7 @@ description: >
   initiatives", "/gtm-planner:roadmap", or wants to finalize a go-to-market
   plan. Fifth and final step of the Go2Rev methodology — prioritizes,
   sequences, and consolidates the full GTM Plan.
+argument-hint: [team capacity or timing constraints]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"

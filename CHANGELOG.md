@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.3.1 — 2026-10-01
+
+Every entry point is now a skill, plus the directory review fixes. No
+change to the methodology or to any step's output.
+
+**Commands folded into skills.** The six `commands/` files were thin
+wrappers whose names collided with the skills of the same name, so the
+command's one-line description was what Claude saw — the skills' own
+descriptions, with all their trigger phrases, were shadowed and never
+reached the model. Claude can now reach for a step on its own when your
+request matches it, instead of only when you type the slash command.
+
+- `commands/` removed. Every `/gtm-planner:*` command keeps working
+  exactly as before: the skills already answered to those names.
+- `commands/plan.md` became `skills/plan/SKILL.md` — the orchestrator was
+  the one command carrying real content, and as a skill it can also carry
+  its own reference files.
+- Each step skill gained the `argument-hint` its command used to hold.
+
+**Eval suite** (`evals/`). Six cases, each taking a claim this README makes
+and turning it into a prompt where a model without the plugin predictably
+does the opposite — inventing funnel numbers, settling a category with no
+ICP, polishing message pillars that should have been cut, quoting CPLs as
+established benchmarks. Every case is scored against a no-plugin baseline,
+so the number that matters is the difference. Run it with
+`claude plugin eval . --trust-plugin`.
+
+Directory review fixes:
+
+- **Listing icon** — `assets/icon.svg`, referenced from `plugin.json`, in
+  the RevOps Studio palette. The listing no longer falls back to the
+  GitHub avatar.
+- **`privacyPolicyUrl`** in `plugin.json`, plus a **Credentials and
+  privacy** section in the README.
+- **`.gitignore` rewritten.** The Node boilerplate it shipped with
+  referenced `.env` files, which read as credential handling in a plugin
+  that has no build, no dependencies and no runtime. It is now a short
+  list appropriate to a Markdown-and-JSON plugin.
+- `displayName` added to `plugin.json`.
+
 ## 0.3.0 — 2026-07-23
 
 Made the methodology more reviewable and more demonstrable:

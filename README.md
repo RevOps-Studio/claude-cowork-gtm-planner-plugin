@@ -72,6 +72,20 @@ Estimates are always labeled as estimates.
 
 Run `/gtm-planner:setup` after installing for a guided walkthrough.
 
+### Credentials and privacy
+
+The planner handles no credentials. It ships no build step, no dependencies
+and no runtime of its own — it is Markdown and JSON only. It reads nothing
+from your environment, your shell profile, your `.env` files or your
+keychain, and it sends no token anywhere. Every connector in `.mcp.json` is
+an official remote MCP server from its own vendor, declared as a plain
+`https://` endpoint with no headers and no environment variables; the Claude
+client performs the OAuth flow and holds the resulting token. Revoking a
+connector in Claude is enough to cut the planner off from it.
+
+Your privacy is covered by the [RevOps Studio privacy
+policy](https://rev-ops.studio/en/privacy-policy/).
+
 ## See it before you run it
 
 `sample-output/` contains a complete end-to-end case — a fictional company
@@ -90,17 +104,18 @@ one thing in this repo, read that. A 60–90s walkthrough lives in
 
 ## Under the hood
 
-**Skills** carry the methodology and orchestrate each step. **Agents** do
-the heavy autonomous work — analyzing your materials, researching
-competitors, sourcing benchmarks, and QA-ing the final plan — and always
-show their sources. **Commands** are the explicit entry points. Progress
-lives in `.claude/gtm-planner.local.md` in your project (template in
-`settings/`).
+**Skills** carry the methodology, and each one is also its own entry
+point: `/gtm-planner:intake` runs the intake skill, and Claude can reach
+for the same skill on its own when what you ask for matches it. `plan` is
+the orchestrator that runs all five steps in order with the decision gates
+between them. **Agents** do the heavy autonomous work — analyzing your
+materials, researching competitors, sourcing benchmarks, and QA-ing the
+final plan — and always show their sources. Progress lives in
+`.claude/gtm-planner.local.md` in your project (template in `settings/`).
 
 ```
-skills/     setup · intake · market-map · positioning · demand-plan · roadmap
+skills/     plan · setup · intake · market-map · positioning · demand-plan · roadmap
 agents/     materials-analyst · market-researcher · benchmark-researcher · plan-qa
-commands/   plan · intake · market-map · positioning · demand-plan · roadmap
 ```
 
 ## Why this is not a prompt pack
@@ -124,8 +139,9 @@ the discipline is the product.
   honestly in each plan's Execution Readiness section).
 - **Data it touches:** user-provided materials; optionally HubSpot (read),
   Notion (write, user-directed), Similarweb/Ahrefs (read). Full detail per
-  connector in `connectors-and-permissions.md`. No credentials handled by
-  the plugin; OAuth is managed by the Claude client.
+  connector in `connectors-and-permissions.md`. The plugin reads no
+  credential from the user's machine and declares no `userConfig`; OAuth is
+  managed by the Claude client. See **Credentials and privacy** above.
 - **How it avoids invented data:** source readiness check before research,
   benchmark rules requiring citations, `needs-benchmark` and confidence
   grading, and a final ledger where every unresolved assumption is visible.

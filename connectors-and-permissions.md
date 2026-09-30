@@ -17,5 +17,8 @@ fallbacks explicitly. Estimates are always labeled.
 **Endpoints** (defined in `.mcp.json`): mcp.hubspot.com ·
 mcp.notion.com/mcp · mcp.similarweb.com · api.ahrefs.com/mcp/mcp. All are
 official remote MCP servers from their vendors, listed in Anthropic's
-Connectors Directory. Authentication is OAuth handled by the Claude client;
-the plugin never sees or stores credentials.
+Connectors Directory. Each is declared as a plain `https://` endpoint with
+no `headers` and no `env` block. Authentication is OAuth handled by the
+Claude client: the plugin never sees, reads or stores a credential, and it
+never reads one from the user's environment, shell profile, `.env` files or
+keychain. It declares no `userConfig`, because it needs no secret.

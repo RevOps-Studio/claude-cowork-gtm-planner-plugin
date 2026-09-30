@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Go-to-Market Planner">
+  <title>Go-to-Market Planner</title>
+  <defs>
+    <linearGradient id="gtmRise" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FE5688"/>
+      <stop offset="0.7" stop-color="#FE5688"/>
+      <stop offset="1" stop-color="#FF7FA3"/>
+    </linearGradient>
+    <radialGradient id="gtmGlow" cx="0.78" cy="0.22" r="0.75">
+      <stop offset="0" stop-color="#8114B0" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#8114B0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="#12001F"/>
+  <rect width="512" height="512" rx="112" fill="url(#gtmGlow)"/>
+
+  <g fill="url(#gtmRise)">
+    <rect x="72"  y="336" width="48" height="96"  rx="16"/>
+    <rect x="152" y="296" width="48" height="136" rx="16"/>
+    <rect x="232" y="248" width="48" height="184" rx="16"/>
+    <rect x="312" y="192" width="48" height="240" rx="16"/>
+  </g>
+
+  <rect x="392" y="128" width="48" height="304" rx="16" fill="#F8DD4B"/>
+</svg>
