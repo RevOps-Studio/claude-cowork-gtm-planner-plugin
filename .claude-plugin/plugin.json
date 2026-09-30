@@ -5,6 +5,7 @@
   "description": "Build a defensible go-to-market plan — positioning, demand engines and a 90-day roadmap — through five gated decisions, with open questions instead of invented data.",
   "author": {
     "name": "RevOps Studio",
+    "email": "carlos@estrada-revops.com",
     "url": "https://rev-ops.studio"
   },
   "homepage": "https://github.com/RevOps-Studio/claude-cowork-gtm-planner-plugin",
@@ -14,7 +15,7 @@
   "privacyPolicyUrl": "https://rev-ops.studio/en/privacy-policy/",
   "termsOfServiceUrl": "https://rev-ops.studio/en/legal-notice/",
   "license": "MIT",
-  "icon": "./assets/icon.svg",
+  "icon": "./assets/icon.png",
   "keywords": [
     "go-to-market",
     "gtm",

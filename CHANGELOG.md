@@ -29,7 +29,7 @@ so the number that matters is the difference. Run it with
 
 Directory review fixes:
 
-- **Listing icon** — `assets/icon.svg`, referenced from `plugin.json`, in
+- **Listing icon** — `assets/icon.png`, referenced from `plugin.json`, in
   the RevOps Studio palette. The listing no longer falls back to the
   GitHub avatar.
 - **`privacyPolicyUrl`** in `plugin.json`, plus a **Credentials and
