@@ -39,6 +39,12 @@ Directory review fixes:
   that has no build, no dependencies and no runtime. It is now a short
   list appropriate to a Markdown-and-JSON plugin.
 - `displayName` added to `plugin.json`.
+- **Listing metadata completed.** `documentationUrl`, `supportUrl` and
+  `termsOfServiceUrl` added — all three are fields the manifest validator
+  recognizes, and all three were empty on the directory listing. The
+  `description` was rewritten so it no longer opens by repeating the
+  plugin's own name, since it is the short description users read in the
+  directory.
 
 ## 0.3.0 — 2026-07-23
 
