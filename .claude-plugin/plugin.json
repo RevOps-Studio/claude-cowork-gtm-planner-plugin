@@ -1,14 +1,21 @@
 {
   "name": "gtm-planner",
-  "version": "0.3.0",
-  "description": "Go-to-Market Planner — build a defensible go-to-market plan (positioning, demand engines, and a 90-day roadmap) with the Go2Rev methodology by RevOps Studio.",
+  "displayName": "Go-to-Market Planner",
+  "version": "0.3.1",
+  "description": "Build a defensible go-to-market plan — positioning, demand engines and a 90-day roadmap — through five gated decisions, with open questions instead of invented data.",
   "author": {
     "name": "RevOps Studio",
+    "email": "carlos@estrada-revops.com",
     "url": "https://rev-ops.studio"
   },
   "homepage": "https://github.com/RevOps-Studio/claude-cowork-gtm-planner-plugin",
+  "documentationUrl": "https://github.com/RevOps-Studio/claude-cowork-gtm-planner-plugin/blob/main/README.md",
+  "supportUrl": "https://github.com/RevOps-Studio/claude-cowork-gtm-planner-plugin/issues",
   "repository": "https://github.com/RevOps-Studio/claude-cowork-gtm-planner-plugin",
+  "privacyPolicyUrl": "https://rev-ops.studio/en/privacy-policy/",
+  "termsOfServiceUrl": "https://rev-ops.studio/en/legal-notice/",
   "license": "MIT",
+  "icon": "./assets/icon.png",
   "keywords": [
     "go-to-market",
     "gtm",

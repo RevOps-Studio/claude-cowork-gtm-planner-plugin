@@ -6,6 +6,15 @@ description: >
   "/gtm-planner:positioning", or needs the strategic positioning and
   messaging architecture of a go-to-market plan. Third step and heart of the
   Go2Rev methodology — decides category, promise, pillars and messages.
+when_to_use: >
+  Also use it when the user wants the category or the positioning without
+  the groundwork: "skip the research", "skip the questions", "just tell me
+  what category we should own", "just give me a positioning statement", "no
+  process, just the answer". Those requests are what this skill's override
+  protocol is for. It still answers them, but labels the answer a
+  low-confidence hypothesis and records the override, so it has to load for
+  them too.
+argument-hint: [positioning direction to explore]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"
@@ -52,7 +61,9 @@ Respond in the language the user is writing in.
 1. **Load context.** Journey state + confirmed Business Snapshot + Market Map.
    Both inputs matter: positioning is decided against the market, grounded in
    real capabilities. If either is missing, warn, offer to run it, and only
-   proceed with explicit acceptance of the limitation.
+   proceed with explicit acceptance of the limitation. A request to skip the
+   groundwork is that acceptance — follow **When the user skips the
+   groundwork** below.
 2. **Evaluate 2–3 candidate categories** (start from the Market Map's
    positioning hypotheses). Score each against: size of the space, saturation,
    fit with actual capabilities, appeal to the ICP. Present the comparison and
@@ -79,6 +90,25 @@ Respond in the language the user is writing in.
    with real customer evidence? Every pillar passes the three-part test?
 10. **Present + open questions.** On confirmation, update journey state and
     point to `/gtm-planner:demand-plan`.
+
+## When the user skips the groundwork
+
+The user can always overrule the process. Overruling it changes how much the
+answer is worth, not whether it says so. When the user asks for the category
+or the positioning while skipping the research or the questions:
+
+1. **Do not refuse, and do not silently comply.** Both fail the user: one
+   withholds the answer, the other hides what it is worth.
+2. **Name what is missing**, in one or two lines: a confirmed ICP from the
+   Business Snapshot, the competitive Market Map, or both — and what each gap
+   puts at risk in the category decision.
+3. **Answer as a hypothesis.** One or two candidate categories, each marked
+   low-confidence, with the one assumption it rests on. Any positioning
+   statement written on top of them is labeled a draft.
+4. **Record the override** as an `assumption` open question with low
+   confidence — in the journey state if one exists, in the reply otherwise.
+5. **Offer the shortest path to firm it up** — usually three questions about
+   the ICP and the two nearest competitors — and stop there.
 
 ## Output structure
 

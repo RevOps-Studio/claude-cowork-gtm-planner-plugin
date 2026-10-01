@@ -6,6 +6,14 @@ description: >
   "build our demand engines", "/gtm-planner:demand-plan", or needs the
   demand generation layer of a go-to-market plan. Fourth step of the Go2Rev
   methodology — selects demand engines and translates them into a channel mix.
+when_to_use: >
+  Also use it for the numbers a demand plan runs on, even when they arrive
+  as a standalone question: "what should a lead cost us", "what CPL should
+  we plan with", "how much should we spend on LinkedIn or Google Ads",
+  "what conversion rates are realistic", "what budget do we need". Those
+  questions are what its source readiness check and benchmark rules are
+  for: every figure sourced or flagged, with concrete routes to verify it.
+argument-hint: [constraints or channel preferences]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"
@@ -62,6 +70,9 @@ Respond in the language the user is writing in.
    benchmarks the design needs. If HubSpot is connected, calibrate against
    the real funnel; if Ahrefs/Similarweb are connected, ground organic and
    competitor-traffic assumptions.
+   If the agent cannot be dispatched in this session, say so and do its
+   part inline, labeled as not agent-checked. Never report what an agent
+   found unless it ran in this session and returned it.
 6. **Translate engines into a channel mix** (3–6 channels). For each channel:
    which engine it serves, funnel function, weight (high/medium/low), phase
    (first 90 days / next quarter / later), organic vs. paid split and its

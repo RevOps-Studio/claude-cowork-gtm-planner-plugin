@@ -6,6 +6,7 @@ description: >
   "/gtm-planner:intake", or describes their company and asks where to begin.
   First step of the Go2Rev methodology — produces the Business Snapshot that
   every later step builds on.
+argument-hint: [company website or context]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"
@@ -54,6 +55,9 @@ Respond in the language the user is writing in, whatever it is.
    of this — work with what the user gives you.
 3. **Dispatch the materials-analyst agent** to analyze the website, documents
    and CRM data. It returns findings with provenance.
+   If the agent cannot be dispatched in this session, say so and do its
+   part inline, labeled as not agent-checked. Never report what an agent
+   found unless it ran in this session and returned it.
 4. **Run the guided interview.** Cover the snapshot sections below
    conversationally — a few questions at a time, adapting to what the
    materials already answered. Never re-ask what the analysis already

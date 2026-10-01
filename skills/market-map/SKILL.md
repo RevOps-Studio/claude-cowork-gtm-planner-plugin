@@ -6,6 +6,7 @@ description: >
   "/gtm-planner:market-map", or needs competitive and category intelligence
   for a go-to-market plan. Second step of the Go2Rev methodology — reads the
   market so positioning can be decided against it.
+argument-hint: [competitors or market focus]
 metadata:
   version: "0.1.0"
   author: "RevOps Studio"
@@ -62,6 +63,9 @@ Respond in the language the user is writing in.
    competitor candidates. It researches autonomously and returns findings
    with sources. If Similarweb/Ahrefs are connected it enriches with traffic
    and organic footprint data.
+   If the agent cannot be dispatched in this session, say so and do its
+   part inline, labeled as not agent-checked. Never report what an agent
+   found unless it ran in this session and returned it.
 5. **Build the three-layer map** and select the 3–5 priority competitors —
    most relevant to this company's decisions, not largest.
 6. **Analyze each priority competitor:** narrative category claimed, core
