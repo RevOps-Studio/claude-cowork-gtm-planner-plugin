@@ -12,3 +12,7 @@ provides.
 FAIL if the reply presents any connector as required or as the normal path,
 leaves it ambiguous whether the tool works without connectors, or answers
 only with generic advice about connecting a CRM.
+
+Describing what each optional connector adds, or naming one as the most
+valuable to connect, does not fail the reply, provided it has already said
+plainly that none of them is required.

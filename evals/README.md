@@ -71,9 +71,11 @@ Runs grant only what a case lists in `allowed_tools`. Most cases list
   benchmark-researcher agent.
 - **`Agent` is withheld from `benchmarks-not-invented` on purpose.** In the
   2026-09-30 run that case's replies described what the benchmark researcher
-  found, although the case did not grant `Agent`. Either the tool was
-  available anyway, or the reply narrated a dispatch that never happened. The
-  `agent-dispatched` indicator and a `--keep-temp` trace settle which.
+  found, although the case did not grant `Agent`. Tools a case doesn't grant
+  are removed from the session, so the likeliest reading is that the reply
+  narrated a dispatch that never happened. The traces of that run are gone,
+  so it is not proven; the `no-narrated-dispatch` grader now fails any reply
+  that does it again.
 - **`AskUserQuestion` is withheld everywhere**, so the questions a step raises
   land in the final message where the graders can read them.
 

@@ -2,8 +2,18 @@
 
 ## 0.3.1 — 2026-10-01
 
-Every entry point is now a skill, plus the directory review fixes. No
-change to the methodology or to any step's output.
+Every entry point is now a skill, the gates hold when the user pushes back,
+plus the directory review fixes. The methodology itself is unchanged.
+
+**Skills that load when they should.** The eval suite found two requests
+that bypassed the method entirely because the skill never loaded: "skip the
+research, just tell me our category" got a confident category in one turn,
+and "what should a lead cost us" got numbers from general knowledge.
+Positioning and demand-plan now carry a `when_to_use` for those requests, and
+positioning has an explicit protocol for a user who skips the groundwork:
+answer as a low-confidence hypothesis, name what is missing, record the
+override. Every step that dispatches an agent now says what to do when it
+can't — and never to report what an agent found unless it actually ran.
 
 **Commands folded into skills.** The six `commands/` files were thin
 wrappers whose names collided with the skills of the same name, so the

@@ -54,6 +54,9 @@ Respond in the language the user is writing in.
    the roadmap prioritize what the market map and positioning flagged? Does
    every selected engine have its activation initiative? Are critical open
    questions reflected? Fix what it finds before presenting.
+   If the agent cannot be dispatched in this session, say so and do its
+   part inline, labeled as not agent-checked. Never report what an agent
+   found unless it ran in this session and returned it.
 6. **Build the consolidated GTM Plan** using
    `references/gtm-plan-template.md` — the five steps' confirmed outputs,
    the consolidated open questions, and the Execution Readiness section
