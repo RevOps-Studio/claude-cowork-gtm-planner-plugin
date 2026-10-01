@@ -6,8 +6,9 @@ Numbers make a plan credible — invented numbers make it fiction.
 
 1. **Every external number cites a source.** Benchmark reports, published
    studies, platform data, tool data (Ahrefs, Similarweb). Include source
-   name and year inline. A source counts only if it was opened in this
-   session or comes from a connected tool. A report remembered but not
+   name and year inline. A source counts only if it was actually opened —
+   now, or when an earlier step researched it and recorded it with its
+   link — or comes from a connected tool. A report remembered but never
    opened is not a citation, however well known: its figure is an
    assumption, labeled as one under rule 3.
 2. **Sector first, generic second.** A B2B-services CPL benchmark beats a

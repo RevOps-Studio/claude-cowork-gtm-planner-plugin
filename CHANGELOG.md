@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.3.3 — 2026-10-01
+
+Fixes from a code review of 0.3.1–0.3.2 and from the directory scan of 0.3.2.
+
+- **Journeys that span sessions keep their sources.** The citation rule said
+  a source counts only if opened "in this session", which, read literally,
+  disowned every benchmark researched in an earlier session of the same
+  journey. A source now counts if it was actually opened, whenever that was,
+  and recorded with its link.
+- **Journeys that start at intake persist.** Intake only updated the journey
+  state file, and only the plan and setup steps created it, so a journey
+  begun at intake was never saved. Intake now creates it when it is missing.
+  Setup also pointed to the state template by a path relative to the user's
+  project instead of the plugin.
+- **The roadmap no longer contradicts itself.** It said to do plan-qa's part
+  inline when plan-qa can't run, and also never to consolidate before
+  plan-qa has run. The coherence check is now what must run first, by
+  plan-qa or inline.
+- **The agent-dispatch rule is gone from intake, market-map and
+  demand-plan.** It guarded against a failure that never occurred, and it
+  carried the same session wording. The demand step instead skips the
+  benchmark researcher when no web access or data source is available,
+  since it would come back empty.
+- **Narrower demand-plan triggers.** "What budget do we need" and "what
+  conversion rates are realistic" are anchored to pipeline and lead-to-deal
+  numbers, so unrelated budget questions don't start a demand plan.
+- **A failed gate mentions the override.** The orchestrator says the user
+  can override a gate explicitly, and that the override is recorded.
+- The changelog no longer writes the icon's path in backticks, which the
+  directory scan reads as code that could run the image, and holds for a
+  reviewer.
+
 ## 0.3.2 — 2026-10-01
 
 - **A citation is a source that was opened.** The benchmark rules said every
@@ -53,8 +85,8 @@ so the number that matters is the difference. Run it with
 
 Directory review fixes:
 
-- **Listing icon** — `assets/icon.png`, referenced from `plugin.json`, in
-  the RevOps Studio palette. The listing no longer falls back to the
+- **Listing icon** — the RevOps Studio logo, bundled as a 512x512 PNG and
+  referenced from `plugin.json`. The listing no longer falls back to the
   GitHub avatar.
 - **`privacyPolicyUrl`** in `plugin.json`, plus a **Credentials and
   privacy** section in the README.

@@ -35,11 +35,11 @@ results — as close to the user's sector and geography as available.
 
 **Rules:**
 
-1. Every number cites source name and year, inline — and only a source you
-   opened in this session or pulled from a connected tool. A report you
-   remember but did not open is not a citation: give its figure as a labeled
-   assumption, or return `needs-benchmark`. Without web access that is the
-   expected outcome, not a failure.
+1. Every number cites source name, year and link, inline — and only a
+   source you opened during this research or pulled from a connected tool.
+   A report you remember but did not open is not a citation: give its
+   figure as a labeled assumption, or return `needs-benchmark`. Without web
+   access that is the expected outcome, not a failure.
 2. Prefer sector-specific over generic; state which level you found.
 3. Report ranges, not points. Round.
 4. If nothing credible exists for a metric, return `needs-benchmark` — never
