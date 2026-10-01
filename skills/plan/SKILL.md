@@ -47,14 +47,16 @@ Respond in the language the user is writing in.
    first step is confirmed.
 2. **Run the step** using its skill — `intake`, `market-map`,
    `positioning`, `demand-plan`, `roadmap` — following that skill's process
-   exactly. The context the user passed in arrives as `$ARGUMENTS`.
+   exactly, with the context the user has given in the conversation (and
+   any passed with the command: $ARGUMENTS).
 3. **Checkpoint.** Present the output summary and the open questions the
    step raised. Wait for confirmation or corrections.
 4. **Update the journey state** after every confirmation — status, date,
    output location, and any new or resolved open questions.
 5. **Check the gate** before advancing (table below). When a gate fails,
-   present what is weak and the options to resolve it; don't advance and
-   don't ask for permission to skip it.
+   present what is weak, the options to resolve it, and that the user can
+   override it explicitly — an override is recorded, not hidden. Don't
+   advance on your own.
 6. **Deliver the consolidated GTM Plan** after the roadmap step.
 
 ## Decision gates
@@ -74,4 +76,4 @@ Respond in the language the user is writing in.
 - No overriding a gate on the user's behalf — an override is theirs to make
   and yours to record.
 - No restarting a journey that already has confirmed steps in its state file.
-- No consolidated plan before the roadmap step's plan-qa check has run.
+- No consolidated plan before the roadmap step's coherence check has run.

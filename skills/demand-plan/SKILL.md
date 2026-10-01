@@ -10,7 +10,8 @@ when_to_use: >
   Also use it for the numbers a demand plan runs on, even when they arrive
   as a standalone question: "what should a lead cost us", "what CPL should
   we plan with", "how much should we spend on LinkedIn or Google Ads",
-  "what conversion rates are realistic", "what budget do we need". Those
+  "what lead-to-deal conversion rates are realistic", "what marketing
+  budget do we need to hit our pipeline target". Those
   questions are what its source readiness check and benchmark rules are
   for: every figure sourced or flagged, with concrete routes to verify it.
 argument-hint: [constraints or channel preferences]
@@ -70,9 +71,9 @@ Respond in the language the user is writing in.
    benchmarks the design needs. If HubSpot is connected, calibrate against
    the real funnel; if Ahrefs/Similarweb are connected, ground organic and
    competitor-traffic assumptions.
-   If the agent cannot be dispatched in this session, say so and do its
-   part inline, labeled as not agent-checked. Never report what an agent
-   found unless it ran in this session and returned it.
+   Skip the dispatch when step 4 found no web access and no connected
+   source: the researcher would come back empty. Go straight to
+   `needs-benchmark` and labeled assumptions instead.
 6. **Translate engines into a channel mix** (3–6 channels). For each channel:
    which engine it serves, funnel function, weight (high/medium/low), phase
    (first 90 days / next quarter / later), organic vs. paid split and its

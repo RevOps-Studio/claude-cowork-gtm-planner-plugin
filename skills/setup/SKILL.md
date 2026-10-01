@@ -52,5 +52,6 @@ connect tools mid-journey and re-run only the affected research.
 ## Finish
 
 Offer to create the journey state file (`.claude/gtm-planner.local.md`)
-from `settings/gtm-planner.local.md.example`, record which connectors are
+from `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.md.example`, record
+which connectors are
 active, and point to the first step: `/gtm-planner:intake`.

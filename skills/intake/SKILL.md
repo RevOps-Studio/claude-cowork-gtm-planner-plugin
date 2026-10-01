@@ -55,9 +55,6 @@ Respond in the language the user is writing in, whatever it is.
    of this — work with what the user gives you.
 3. **Dispatch the materials-analyst agent** to analyze the website, documents
    and CRM data. It returns findings with provenance.
-   If the agent cannot be dispatched in this session, say so and do its
-   part inline, labeled as not agent-checked. Never report what an agent
-   found unless it ran in this session and returned it.
 4. **Run the guided interview.** Cover the snapshot sections below
    conversationally — a few questions at a time, adapting to what the
    materials already answered. Never re-ask what the analysis already
@@ -71,7 +68,9 @@ Respond in the language the user is writing in, whatever it is.
 7. **Present the snapshot + open questions.** End with a short "Snapshot
    confidence" note: what is solid, what is thin, and the single most valuable
    thing the user could add. Ask the user to confirm or correct.
-8. **On confirmation**, update the journey state file (step 1 → confirmed,
+8. **On confirmation**, create the journey state file from
+   `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.md.example` if it does
+   not exist yet, then update it (step 1 → confirmed,
    log resolved/pending open questions) and point to the next step:
    `/gtm-planner:market-map`.
 
