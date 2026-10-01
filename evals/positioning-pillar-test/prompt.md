@@ -3,7 +3,7 @@ description: Pillars that all sound differentiated must still be tested for defe
 tags: [positioning, method]
 expected_outcome: Unproven claims are flagged or questioned for evidence before they become messaging.
 max_turns: 20
-timeout_seconds: 600
+timeout_seconds: 1200
 allowed_tools: [Read, Glob, Grep, Skill]
 ---
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.2 — 2026-10-01
+
+- **A citation is a source that was opened.** The benchmark rules said every
+  external number cites a source, but not that the source had to be
+  consulted. With no web access, the benchmark researcher once returned
+  well-known reports cited from memory, and the reply recommended planning
+  with them. A source now counts only if it was opened in the session or
+  came from a connected tool; a remembered report is an assumption, labeled
+  as one.
+- `positioning-pillar-test` timeout raised to 1,200s. Its longest runs took
+  572s and 607s, in both arms, and a timeout scores as a failure.
+
 ## 0.3.1 — 2026-10-01
 
 Every entry point is now a skill, the gates hold when the user pushes back,
