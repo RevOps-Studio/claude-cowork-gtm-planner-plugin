@@ -66,16 +66,12 @@ Runs grant only what a case lists in `allowed_tools`. Most cases list
 - **No web tools in any case.** That is what makes `benchmarks-not-invented` a
   real test: with no way to look a figure up, a model either says so or
   fabricates.
-- **`Agent` is granted only in `demand-engines-not-tactics`**, which exercises
-  the plugin's real architecture: the demand step dispatching the
-  benchmark-researcher agent.
-- **`Agent` is withheld from `benchmarks-not-invented` on purpose.** In the
-  2026-09-30 run that case's replies described what the benchmark researcher
-  found, although the case did not grant `Agent`. Tools a case doesn't grant
-  are removed from the session, so the likeliest reading is that the reply
-  narrated a dispatch that never happened. The traces of that run are gone,
-  so it is not proven; the `no-narrated-dispatch` grader now fails any reply
-  that does it again.
+- **`Agent` is available whether or not a case lists it.** Observed on Claude
+  Code 2.1.286: `benchmarks-not-invented` doesn't list `Agent`, and its runs
+  still dispatched `gtm-planner:benchmark-researcher`, which ran and
+  returned. Other tools a case doesn't list — `Write`, for one — are removed.
+  Listing `Agent`, as `demand-engines-not-tactics` does, documents intent
+  rather than granting anything.
 - **`AskUserQuestion` is withheld everywhere**, so the questions a step raises
   land in the final message where the graders can read them.
 

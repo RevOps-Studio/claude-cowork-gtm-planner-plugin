@@ -12,8 +12,10 @@ and "what should a lead cost us" got numbers from general knowledge.
 Positioning and demand-plan now carry a `when_to_use` for those requests, and
 positioning has an explicit protocol for a user who skips the groundwork:
 answer as a low-confidence hypothesis, name what is missing, record the
-override. Every step that dispatches an agent now says what to do when it
-can't — and never to report what an agent found unless it actually ran.
+override. Every step that dispatches an agent now also says what to do when
+it can't, and never to report findings from an agent that did not run — a
+guard, not a fix for an observed failure: the replies that first raised the
+suspicion turned out to come from real dispatches.
 
 **Commands folded into skills.** The six `commands/` files were thin
 wrappers whose names collided with the skills of the same name, so the
