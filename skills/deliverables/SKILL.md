@@ -11,7 +11,7 @@ description: >
   Demand Plan, 90-day Roadmap and the consolidated GTM Plan.
 argument-hint: [step to render, or "all"]
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
   author: "RevOps Studio"
 ---
 
@@ -34,17 +34,19 @@ that language too.
 
 | Deliverable | Rendered when | From | Template |
 |---|---|---|---|
-| `01-business-snapshot.html` | intake is confirmed | the confirmed snapshot | `templates/01-business-snapshot.html` |
-| `02-market-map.html` | market-map is confirmed | the confirmed map | `templates/02-market-map.html` |
-| `03-positioning.html` | positioning is confirmed | the confirmed architecture | `templates/03-positioning.html` |
-| `04-demand-plan.html` | demand-plan is confirmed | the confirmed demand plan | `templates/04-demand-plan.html` |
-| `05-roadmap.html` | roadmap is confirmed | the 90-day table + outline | `templates/05-roadmap.html` |
-| `00-gtm-plan.html` | the GTM Plan is consolidated | the consolidated plan | `templates/00-gtm-plan.html` |
+| `01-business-snapshot.html` | intake is confirmed | the confirmed snapshot | `templates/01-business-snapshot.md` |
+| `02-market-map.html` | market-map is confirmed | the confirmed map | `templates/02-market-map.md` |
+| `03-positioning.html` | positioning is confirmed | the confirmed architecture | `templates/03-positioning.md` |
+| `04-demand-plan.html` | demand-plan is confirmed | the confirmed demand plan | `templates/04-demand-plan.md` |
+| `05-roadmap.html` | roadmap is confirmed | the 90-day table + outline | `templates/05-roadmap.md` |
+| `00-gtm-plan.html` | the GTM Plan is consolidated | the consolidated plan | `templates/00-gtm-plan.md` |
 
 Templates live in `${CLAUDE_PLUGIN_ROOT}/skills/deliverables/`. Each is a
-body fragment filled with the fictional Fluxen example and annotated with its
-slots in an HTML comment at the top. The design system is
-`assets/head.html`; it is copied verbatim, never edited per company.
+Markdown file: the slot notes first, then the page body in an `html` code
+block, filled with the fictional Fluxen example. The design system is the
+`html` code block in `assets/design-system.md`; it is copied verbatim, never
+edited per company. (The plugin ships HTML only inside Markdown: the plugin
+directory accepts no `.html` files from it.)
 
 ## Process
 
@@ -58,23 +60,26 @@ slots in an HTML comment at the top. The design system is
    nothing unless the user asks.
 2. **Read the template** for the deliverable and `references/visual-rules.md`.
 3. **Write the body.** Replace every piece of example content with this
-   company's confirmed content, following the slot notes in the template's
-   top comment. Keep the template's structure, classes and section order;
+   company's confirmed content, following the template's slot notes. Keep the template's structure, classes and section order;
    drop a section only when the step output has nothing for it, and say so
    in the reply. Translate every visible label into the user's language.
-   Remove every template comment.
+   The body is what sits inside the template's `html` block — never the
+   Markdown around it, and never the code fences.
 4. **Assemble one self-contained file** in the deliverables folder. Write the
    body to a temporary file, then join it to the design system:
 
    ```bash
    mkdir -p gtm-plan
-   sed 's/<html lang="en">/<html lang="es">/' "${CLAUDE_PLUGIN_ROOT}/skills/deliverables/assets/head.html" > gtm-plan/01-business-snapshot.html
+   awk '/^```html\r?$/{f=1;next} /^```\r?$/{f=0} f' "${CLAUDE_PLUGIN_ROOT}/skills/deliverables/assets/design-system.md" \
+     | sed 's/<html lang="en">/<html lang="es">/' > gtm-plan/01-business-snapshot.html
    cat gtm-plan/.body.html >> gtm-plan/01-business-snapshot.html && rm gtm-plan/.body.html
    ```
 
    Use the user's language code in the `sed` (`en`, `es`, `pt`, `fr`…).
-   Without a shell, read `assets/head.html` and write the whole document in
-   one file: the head block exactly as it is, then the body.
+   Without a shell, read `assets/design-system.md` and write the whole
+   document in one file: the contents of its `html` block exactly as they
+   are (without the fences), then the body. The page must start with
+   `<!doctype html>`.
 5. **Link the set.** In every deliverable already in the folder, turn the new
    one's tab into a link, e.g. for positioning:
    `sed -i 's|<span data-tab="03">\([^<]*\)</span>|<a data-tab="03" href="03-positioning.html">\1</a>|' gtm-plan/*.html`

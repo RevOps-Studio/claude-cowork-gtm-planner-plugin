@@ -1,30 +1,37 @@
-<!--
-  TEMPLATE · Step 4 · Demand Plan (one page)
-  Body fragment appended to assets/head.html. Replace ALL Fluxen content.
+# Template · Step 4 · Demand Plan (one page)
 
-  Slots
-  - Hero chain: the demand math the plan stated (e.g. opportunities last
-    year → opportunities needed → the goal). Only numbers the plan contains.
-  - KPI strip: budget ceiling, planned mix spend, capacity limit, number of
-    engines selected and discarded. Figures from the plan only.
-  - Engine architecture (.cov): one row per selected engine (3–5). Columns =
-    the funnel stages the plan names. A covered stage gets <span class="dot">
-    (primary) or <span class="dot dot--low"> (secondary). "First signal" uses
-    .signal with --from/--to as % of the scale shown in .signal-scale
-    (default 0–180 days: 60 days = 33%, 90 = 50%, 150 = 83%). Scale labels
-    must be evenly spaced values: 0 · 30 · 60 · 90 · 120 · 150 · 180.
-  - Engine cards: mechanism, health indicators, operating requirements, and
-    every benchmark with its source state:
-      cited → <span class="src">Source, year</span>
-      no credible source → <span class="chip chip--warn">needs benchmark</span>
-      assumption → <span class="chip chip--warn">assumption</span>
-  - Discards: every engine screened out, with its one-line reason and source.
-  - Channel mix: 3–6 channels; weight as meter (3 high · 2 medium · 1 low);
-    phase chip; monthly cost with "(assumption)" when it is one.
-  - Activation sequence: first 90 days in .phase--now, then the later phases
-    with what each is conditional on.
-  - "Does not solve": the short section from the plan, as a card.
--->
+Body fragment that follows the design system (`assets/design-system.md`). Replace ALL Fluxen content.
+
+Slots
+- Hero chain: the demand math the plan stated (e.g. opportunities last
+  year → opportunities needed → the goal). Only numbers the plan contains.
+- KPI strip: budget ceiling, planned mix spend, capacity limit, number of
+  engines selected and discarded. Figures from the plan only.
+- Engine architecture (.cov): one row per selected engine (3–5). Columns =
+  the funnel stages the plan names. A covered stage gets `<span class="dot">`
+  (primary) or `<span class="dot dot--low">` (secondary). "First signal" uses
+  .signal with --from/--to as % of the scale shown in .signal-scale
+  (default 0–180 days: 60 days = 33%, 90 = 50%, 150 = 83%). Scale labels
+  must be evenly spaced values: 0 · 30 · 60 · 90 · 120 · 150 · 180.
+- Engine cards: mechanism, health indicators, operating requirements, and
+  every benchmark with its source state:
+    cited → `<span class="src">Source, year</span>`
+    no credible source → `<span class="chip chip--warn">needs benchmark</span>`
+    assumption → `<span class="chip chip--warn">assumption</span>`
+- Discards: every engine screened out, with its one-line reason and source.
+- Channel mix: 3–6 channels; weight as meter (3 high · 2 medium · 1 low);
+  phase chip; monthly cost with "(assumption)" when it is one.
+- Activation sequence: first 90 days in .phase--now, then the later phases
+  with what each is conditional on.
+- "Does not solve": the short section from the plan, as a card.
+
+## Body
+
+Everything inside the block below is the page body that follows the design
+system. Write it out with this company's content; never copy the block's
+example content.
+
+```html
 <title>Demand Plan — Fluxen</title>
 <meta name="description" content="Demand Plan for Fluxen, built with GTM Planner (Go2Rev methodology).">
 </head>
@@ -195,3 +202,4 @@
 </a>
 </body>
 </html>
+```

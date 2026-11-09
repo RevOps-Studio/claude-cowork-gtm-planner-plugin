@@ -1,26 +1,33 @@
-<!--
-  TEMPLATE · Step 1 · Business Snapshot (one page)
-  Body fragment: it is appended to assets/head.html. Example content is the
-  fictional Fluxen case — replace ALL of it with the confirmed snapshot.
-  Delete every template comment in the output.
+# Template · Step 1 · Business Snapshot (one page)
 
-  Slots
-  - <title>, meta description: "Business Snapshot — [Company]".
-  - .status: "Confirmed · [date]" (+ class status--ok) or "Draft — not confirmed"
-    (class status--draft). "Example · …" is reserved for the plugin's own sample.
-  - Hero title: "[Company] <span class=muted>→ [the move this plan is for]</span>".
-  - Lede: offer in a few words · category · city/country.
-  - Tabs: <a> for deliverables that exist in the folder, <span> for the rest.
-  - KPI strip: 4–5 figures FROM THE SNAPSHOT only. The 12-month goal gets
-    .kpi--accent. A declared-but-unverified figure gets .kpi--est. No figure →
-    leave the KPI out; never estimate one to fill the strip. A recommendation
-    from an open question is not a KPI.
-  - Cards 01–08 follow the snapshot sections 1–8, 2–3 sentences each.
-  - Open questions (section 9): every one, with type chip, confidence meter
-    (data-level 1 low · 2 medium · 3 high) and the next step.
-  - Foot: the "Snapshot confidence" note + the sources line.
-  - Credit strip: keep unless the journey state says Deliverable credit: off.
--->
+Body fragment that follows the design system (`assets/design-system.md`). Example content is the
+fictional Fluxen case — replace ALL of it with the confirmed snapshot.
+The page body is the `html` block under Body; nothing outside it goes in the output.
+
+Slots
+- `<title>`, meta description: "Business Snapshot — [Company]".
+- .status: "Confirmed · [date]" (+ class status--ok) or "Draft — not confirmed"
+  (class status--draft). "Example · …" is reserved for the plugin's own sample.
+- Hero title: "[Company] `<span class=muted>→ [the move this plan is for]</span>`".
+- Lede: offer in a few words · category · city/country.
+- Tabs: `<a>` for deliverables that exist in the folder, `<span>` for the rest.
+- KPI strip: 4–5 figures FROM THE SNAPSHOT only. The 12-month goal gets
+  .kpi--accent. A declared-but-unverified figure gets .kpi--est. No figure →
+  leave the KPI out; never estimate one to fill the strip. A recommendation
+  from an open question is not a KPI.
+- Cards 01–08 follow the snapshot sections 1–8, 2–3 sentences each.
+- Open questions (section 9): every one, with type chip, confidence meter
+  (data-level 1 low · 2 medium · 3 high) and the next step.
+- Foot: the "Snapshot confidence" note + the sources line.
+- Credit strip: keep unless the journey state says Deliverable credit: off.
+
+## Body
+
+Everything inside the block below is the page body that follows the design
+system. Write it out with this company's content; never copy the block's
+example content.
+
+```html
 <title>Business Snapshot — Fluxen</title>
 <meta name="description" content="Business Snapshot for Fluxen, built with GTM Planner (Go2Rev methodology).">
 </head>
@@ -107,3 +114,4 @@
 </a>
 </body>
 </html>
+```

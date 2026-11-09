@@ -24,9 +24,8 @@ this planner is designed for.
 | `04-demand-plan.md` | Demand Plan | Engines vs. tactics; visible discards; sourced benchmarks and `needs-benchmark` flags |
 | `05-roadmap.md` | Roadmap | Result-milestones; capacity-limited 90 days; parked initiatives with reasons |
 | `00-gtm-plan.md` | Final | The consolidated plan with assumption & evidence ledger and Execution Readiness |
-| `visual/*.html` | All | The six one-page deliverables the journey renders, linked to each other. Open `visual/01-business-snapshot.html` in a browser; `visual/previews/` has images of each |
 
-The visual pages are built from the deliverable templates in
-`skills/deliverables/templates/`, which use this same case as their example
-content. That is the one place "Example · fictional company" appears: a
-real run marks each page Confirmed or Draft.
+The visual pages of this case are rendered from the deliverable templates in
+`skills/deliverables/templates/`, which use Fluxen as their example content.
+That is the one place "Example · fictional company" appears: a real run marks
+each page Confirmed or Draft.

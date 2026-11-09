@@ -68,7 +68,7 @@ so fidelity rules come first and layout rules second.
 
 ## Design system
 
-`assets/head.html` is the RevOps Studio visual system: Manrope and JetBrains
+The `html` block in `assets/design-system.md` is the RevOps Studio visual system: Manrope and JetBrains
 Mono, ink and paper, the purple-to-yellow gradient. It is copied verbatim.
 Never edit its CSS per company, never add inline colours, external images,
 fonts, scripts or the client's logo. Inline `style` is allowed only for the
@@ -104,7 +104,8 @@ Run these on the assembled file and fix anything they find:
 
 ```bash
 f=gtm-plan/01-business-snapshot.html
-grep -c "<!--" "$f"                                   # 0: template comments removed
+head -c 15 "$f"                                       # <!doctype html>: no Markdown or fences leaked in
+grep -c '```' "$f"                                    # 0: no code fences
 grep -ci "fluxen\|fictional company" "$f"             # 0, unless the company is Fluxen
 grep -o "€[0-9][0-9.,]*k\?\|[0-9][0-9.,]*%" "$f" | sort -u   # every figure listed is in the confirmed step
 ```
