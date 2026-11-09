@@ -9,9 +9,9 @@ description: >
   restore the credit line. Turns confirmed step outputs into branded,
   self-contained HTML pages: Business Snapshot, Market Map, Positioning,
   Demand Plan, 90-day Roadmap and the consolidated GTM Plan.
-argument-hint: [step to render, or "all"]
+argument-hint: [step to render or all]
 metadata:
-  version: "0.4.2"
+  version: "0.4.3"
   author: "RevOps Studio"
 ---
 

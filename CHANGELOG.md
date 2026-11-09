@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.3 — 2026-11-09
+
+The directory refused 0.4.2 with a finding the earlier refusals did not
+show: the deliverables skill's front matter could not be read the same way
+by Claude Code and by the directory's check (`FILE_NOT_PLAIN`), so the
+plugin "couldn't be read completely". Its `argument-hint` was a list whose
+item, `or "all"`, mixed plain words and quotes.
+
+- `argument-hint` is now `[step to render or all]`, the same plain-words
+  form every other skill uses.
+
 ## 0.4.2 — 2026-11-09
 
 The directory refused 0.4.1 as well. Its check judges a file by its
