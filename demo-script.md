@@ -24,5 +24,8 @@ company one-liner ready.
    owners and result-milestones → assumption & evidence ledger → Execution
    Readiness. Voiceover: "And it ends honestly: what the plan commits to,
    what it assumes, and what it deliberately doesn't cover."
+6. **(optional, +10s) The pages.** Open `gtm-plan/05-roadmap.html` and
+   click through the tabs. Voiceover: "Every step leaves a page you can send
+   to your board — with the open questions still on it."
 
 **Cut.** Link to `sample-output/` for the full artifact.

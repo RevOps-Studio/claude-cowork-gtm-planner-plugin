@@ -89,8 +89,9 @@ Respond in the language the user is writing in.
 9. **Coherence check:** engines consistent with positioning? Mix operable
    within declared constraints? Funnel fully covered? Every number sourced
    or flagged?
-10. **Present + open questions.** On confirmation, update journey state and
-   point to `/gtm-planner:roadmap`.
+10. **Present + open questions.** On confirmation, update journey state,
+   save the plan as `gtm-plan/04-demand-plan.md`, render its one-page visual
+   with the `deliverables` skill, and point to `/gtm-planner:roadmap`.
 
 ## Output structure
 

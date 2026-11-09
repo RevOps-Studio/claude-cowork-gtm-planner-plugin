@@ -78,7 +78,9 @@ Respond in the language the user is writing in.
    pointed to? Is every gap tested against `gap-vs-hole.md`? Any competitor
    ignored by default that should be here?
 10. **Present the Market Map + open questions.** On confirmation, update the
-   journey state and point to `/gtm-planner:positioning`.
+   journey state, save the map as `gtm-plan/02-market-map.md`, render its
+   one-page visual with the `deliverables` skill, and point to
+   `/gtm-planner:positioning`.
 
 ## Output structure
 

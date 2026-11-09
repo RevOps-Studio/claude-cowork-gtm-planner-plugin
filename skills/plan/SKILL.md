@@ -52,12 +52,16 @@ Respond in the language the user is writing in.
 3. **Checkpoint.** Present the output summary and the open questions the
    step raised. Wait for confirmation or corrections.
 4. **Update the journey state** after every confirmation — status, date,
-   output location, and any new or resolved open questions.
+   output location, and any new or resolved open questions — and let the
+   step render its visual deliverable (the `deliverables` skill), so the
+   user leaves every session with a page they can share.
 5. **Check the gate** before advancing (table below). When a gate fails,
    present what is weak, the options to resolve it, and that the user can
    override it explicitly — an override is recorded, not hidden. Don't
    advance on your own.
-6. **Deliver the consolidated GTM Plan** after the roadmap step.
+6. **Deliver the consolidated GTM Plan** after the roadmap step, as
+   Markdown and as its visual (`gtm-plan/00-gtm-plan.html`), linked to the
+   five one-page deliverables.
 
 ## Decision gates
 

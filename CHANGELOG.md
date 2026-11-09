@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.4.0 — 2026-11-09
+
+**Visual deliverables.** Every confirmed step now leaves a page the user can
+share, not only a Markdown answer: the Business Snapshot, Market Map,
+Positioning, Demand Plan and 90-day Roadmap as one-page HTML files, and the
+consolidated GTM Plan as a long-form page that links to all five. They are
+the pages the plugin's website shows.
+
+- **New `deliverables` skill** (`/gtm-planner:deliverables`). It renders
+  any confirmed step, re-renders after a change, and removes or restores
+  the credit line. Each step skill calls it on confirmation, and saves the
+  confirmed output as Markdown next to its page in `gtm-plan/`, so a later
+  session can re-render without redoing the step.
+- **A view, never a new analysis.** `references/visual-rules.md` holds the
+  pages to the plan's own rules: no figure, name or claim that the
+  confirmed step does not contain, every flag and open question kept
+  visible, a missing number shown as a gap rather than filled. Each render
+  ends with a self-check.
+- **The RevOps Studio visual system** (`assets/head.html`): Manrope and
+  JetBrains Mono, ink and paper, the purple-to-yellow gradient, components
+  for KPI strips, confidence meters, the three-ring market map, the
+  positioning map, the category matrix, engine coverage and the Gantt.
+  Self-contained files with no scripts; they work on a phone and print to
+  a landscape PDF.
+- **Credit line.** Each page ends with "Built with GTM Planner", linking to
+  the plugin's page with UTM parameters that name the deliverable type and
+  nothing else. `Deliverable credit: off` in the journey state removes it;
+  `Format: markdown only` skips the pages. Execution Readiness stays free of
+  any call to action, as the methodology requires.
+- **Sample case, visual.** `sample-output/visual/` holds the six pages for
+  the fictional Fluxen case, with image previews.
+- **New eval case** `deliverable-adds-nothing`: a confirmed snapshot full of
+  gaps, and a request for a board-ready page. Not yet run.
+- The journey-state template gains a `Deliverables` section; setup mentions
+  the pages in one line.
+
 ## 0.3.3 — 2026-10-01
 
 Fixes from a code review of 0.3.1–0.3.2 and from the directory scan of 0.3.2.

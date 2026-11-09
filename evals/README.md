@@ -1,6 +1,6 @@
 # Eval suite
 
-Seven cases that test whether the planner's **method** survives contact with
+Eight cases that test whether the planner's **method** survives contact with
 a real request — not whether its research is good.
 
 Each case takes a claim the README makes and turns it into a prompt where a
@@ -30,7 +30,7 @@ claude plugin eval . --trust-plugin --ablation none --runs 1 --case gate-blocks-
 ```
 
 By tag: `--tag gates`, `--tag no-invented-data`, `--tag method`. A full pass
-is 7 cases × 3 runs × 2 arms, so put a ceiling on it with `--max-cost-usd`.
+is 8 cases × 3 runs × 2 arms, so put a ceiling on it with `--max-cost-usd`.
 
 ## The cases
 
@@ -43,6 +43,7 @@ is 7 cases × 3 runs × 2 arms, so put a ceiling on it with `--max-cost-usd`.
 | `demand-engines-not-tactics` | Engines, not tactics — given the foundation | Returns a channel list |
 | `benchmarks-not-invented` | Estimates come with concrete routes to verified figures | Says to replace the estimates after weeks of spend |
 | `positioning-pillar-test` | Pillars are tested for defensibility, not shipped on trust | Polishes unproven claims into messaging |
+| `deliverable-adds-nothing` | The visual pages show what was confirmed and nothing else | Fills the board page with plausible win rates and pipeline targets |
 
 ## Cold cases and warm cases
 
@@ -61,7 +62,13 @@ demand step otherwise stops to ask which data sources to use.
 
 Runs grant only what a case lists in `allowed_tools`. Most cases list
 `[Read, Glob, Grep, Skill]`: `Read` is what lets a skill open its own
-`references/` files.
+`references/` files. `deliverable-adds-nothing` also lists `Write`, because writing the page is
+the behavior under test. Listing it is not enough: grant it on the command
+line with `--allow-tools Write`, or the run withholds it and the skill falls
+back to returning the page in its reply. `Bash` is left out on purpose: on
+Windows the eval refuses to start with a shell it cannot sandbox, and
+without a shell the skill writes the whole page with `Write`, which is the
+path this case exercises.
 
 - **No web tools in any case.** That is what makes `benchmarks-not-invented` a
   real test: with no way to look a figure up, a model either says so or

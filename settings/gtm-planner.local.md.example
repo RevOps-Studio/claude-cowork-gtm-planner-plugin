@@ -31,6 +31,15 @@ Statuses: `not started` / `draft` / `confirmed`
 ### Pending
 <!-- The planner appends open questions here: [type] question — recommendation -->
 
+## Deliverables
+
+- Folder: gtm-plan/
+- Format: html + markdown
+- Deliverable credit: on
+
+`Format: markdown only` skips the visual pages. `Deliverable credit: off`
+removes the "Built with GTM Planner" line from them.
+
 ## Connected sources
 
 - HubSpot: no

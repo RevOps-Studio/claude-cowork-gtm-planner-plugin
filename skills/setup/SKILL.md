@@ -49,6 +49,14 @@ removes flags and adds precision. The market-map and demand-plan steps run
 their own source readiness check before researching, so the user can also
 connect tools mid-journey and re-run only the affected research.
 
+## What the user takes away
+
+Mention once, in a line: every confirmed step also produces a one-page
+visual (HTML, opens in any browser, prints to PDF) in a `gtm-plan/`
+folder, and the journey ends with the consolidated plan in the same format.
+They can switch the visuals off (`Format: markdown only`) or drop the
+credit line (`Deliverable credit: off`) in the journey state.
+
 ## Finish
 
 Offer to create the journey state file (`.claude/gtm-planner.local.md`)

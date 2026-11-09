@@ -62,7 +62,10 @@ Respond in the language the user is writing in.
    the consolidated open questions, and the Execution Readiness section
    built per `references/execution-readiness.md`.
 7. **Present the roadmap first, then the full plan.** On confirmation,
-   update the journey state to complete. If Notion is connected, offer to
+   update the journey state to complete, save `gtm-plan/05-roadmap.md` and
+   `gtm-plan/00-gtm-plan.md`, and render both visuals with the
+   `deliverables` skill: the 90-day Gantt (`05-roadmap.html`) and the
+   consolidated plan (`00-gtm-plan.html`). If Notion is connected, offer to
    save the GTM Plan and the roadmap table there. Offer XLSX/PPTX exports
    only if the user asks for them.
 
