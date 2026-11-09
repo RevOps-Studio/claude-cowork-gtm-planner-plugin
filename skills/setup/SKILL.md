@@ -60,6 +60,6 @@ credit line (`Deliverable credit: off`) in the journey state.
 ## Finish
 
 Offer to create the journey state file (`.claude/gtm-planner.local.md`)
-from `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.md.example`, record
+from `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.template.md`, record
 which connectors are
 active, and point to the first step: `/gtm-planner:intake`.
