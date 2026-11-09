@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.4.3 — 2026-11-09
+
+Why 0.4.1 and 0.4.2 were refused, found by running the developer portal's
+Validate on a branch instead of reading the post-merge scan: the file the
+directory rejects from organizations that aren't Verified was
+`settings/gtm-planner.local.md.example`, the journey-state template that has
+shipped since 0.2.0. Its `.example` extension isn't an allowed type, and the
+rule arrived after 0.3.3 was published. The scan never named the file; the
+portal's Validate does.
+
+- **The journey-state template is `settings/gtm-planner.local.template.md`.**
+  The intake, plan and setup skills point to the new name. What it holds is
+  unchanged.
+- **Pages load nothing from the network.** The design system no longer
+  links Google Fonts: the stacks name Manrope and JetBrains Mono, used where
+  installed, then fall back to system fonts. The directory's policy asks a
+  plugin to own every external resource it renders (3F), and a page sent to
+  a board shouldn't call a third party when it opens.
+- **The credit line carries no tracking.** It still links to the plugin's
+  page, without the UTM parameters, so it reads as attribution rather than
+  promotion (policy 4C). `Deliverable credit: off` still removes it.
+- **Plain front matter.** The deliverables skill's `argument-hint` mixed
+  plain words and quotes in a list item (`FILE_NOT_PLAIN`), which left the
+  plugin "couldn't be read completely". It is now `[step to render or all]`,
+  the form every other skill uses.
+
 ## 0.4.2 — 2026-11-09
 
 The directory refused 0.4.1 as well. Its check judges a file by its

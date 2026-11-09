@@ -43,7 +43,7 @@ Respond in the language the user is writing in.
 1. **Locate the journey.** Read `.claude/gtm-planner.local.md` if it exists
    and resume from the first unconfirmed step. Tell the user where they are
    before doing anything else. If no state file exists, create it from
-   `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.md.example` once the
+   `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.template.md` once the
    first step is confirmed.
 2. **Run the step** using its skill — `intake`, `market-map`,
    `positioning`, `demand-plan`, `roadmap` — following that skill's process

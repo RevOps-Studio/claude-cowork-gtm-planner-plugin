@@ -100,10 +100,11 @@ an official remote MCP server from its own vendor, declared as a plain
 client performs the OAuth flow and holds the resulting token. Revoking a
 connector in Claude is enough to cut the planner off from it.
 
-The visual deliverables contain no scripts and no tracking. Opening one
-loads its two typefaces from Google Fonts; offline, it falls back to system
-fonts. Its credit link carries UTM parameters naming the deliverable type
-only — never your company or any of your data.
+The visual deliverables load nothing from the network: no scripts, no web
+fonts, no images from elsewhere, no tracking. They use the RevOps Studio
+typefaces where you have them installed and your system's fonts otherwise.
+The one-line credit links to the plugin's page with no tracking parameters,
+and `Deliverable credit: off` removes it.
 
 Your privacy is covered by the [RevOps Studio privacy
 policy](https://rev-ops.studio/en/privacy-policy/).

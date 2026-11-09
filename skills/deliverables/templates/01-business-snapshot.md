@@ -38,7 +38,7 @@ case; none of them belongs in a real page.
 5. **Foot** — note "**Snapshot confidence:** …"; sources "Figures declared
    by the company · [what is or isn't connected]" and "Go2Rev methodology ·
    step 1 of 5".
-6. **Credit strip**, campaign `business-snapshot`.
+6. **Credit strip**, unless the journey state turns it off.
 
 Example, for tone only (fictional Fluxen): title "Fluxen → beyond the
 founder network"; KPIs €900k ARR today, 14 plants live, "8 plants — new in

@@ -50,7 +50,7 @@ the steps did not confirm.
     Measurement) with their "If skipped"; the capacity note as a `.lead`.
 11. **Foot** — note on the coherence check; sources line and
     "consolidated plan".
-12. **Credit strip**, campaign `gtm-plan`.
+12. **Credit strip**, unless the journey state turns it off.
 
 Chapters 2–6 and 8 carry the `.chapter` class (rule above, new page in
 print); the ledger is a dark panel instead.

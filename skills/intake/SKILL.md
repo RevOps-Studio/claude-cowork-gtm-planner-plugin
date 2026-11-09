@@ -69,7 +69,7 @@ Respond in the language the user is writing in, whatever it is.
    confidence" note: what is solid, what is thin, and the single most valuable
    thing the user could add. Ask the user to confirm or correct.
 8. **On confirmation**, create the journey state file from
-   `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.md.example` if it does
+   `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.template.md` if it does
    not exist yet, then update it (step 1 → confirmed,
    log resolved/pending open questions), save the confirmed snapshot as
    `gtm-plan/01-business-snapshot.md`, render its one-page visual with the

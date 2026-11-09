@@ -47,4 +47,4 @@ The page blueprint: what goes on this page and in what order. Build it with the 
    capacity: …" (the capacity limit the roadmap or the snapshot states)
    and the coherence-check line (plan-qa or inline). The roadmap's
    prioritization logic, when it has one, goes in the lede.
-5. **Credit strip**, campaign `roadmap`.
+5. **Credit strip**, unless the journey state turns it off.

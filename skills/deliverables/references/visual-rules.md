@@ -80,9 +80,10 @@ Manrope and JetBrains Mono, ink and paper, the purple-to-yellow gradient,
 and every component a page uses, with exact values. Follow it as written:
 no colours, fonts, effects, external images, scripts or client logos of your
 own. Inline `style` is allowed only for the positional values the
-blueprints use (`grid-column`, `--x`, `--y`, `--w`, `--from`, `--to`). Fonts
-load from Google Fonts; offline, the page falls back to system fonts and
-stays readable. Once a company has one deliverable, every later page reuses
+blueprints use (`grid-column`, `--x`, `--y`, `--w`, `--from`, `--to`). A page
+loads nothing from the network — no web fonts either: the brand fonts are
+named in the stacks and used where installed, and the system fonts take over
+everywhere else. Once a company has one deliverable, every later page reuses
 its stylesheet unchanged.
 
 ## Credit line
@@ -91,26 +92,27 @@ The last element before `</body>`, unless the journey state says
 `Deliverable credit: off`. English:
 
 ```html
-<a class="credit" href="https://rev-ops.studio/gtm-planner?utm_source=gtm-planner&amp;utm_medium=deliverable&amp;utm_campaign=CAMPAIGN">
+<a class="credit" href="https://rev-ops.studio/gtm-planner">
   <div class="wrap"><span class="credit__mark" aria-hidden="true"></span>
     <span class="credit__text">Built with <b>GTM Planner</b>, a free Claude plugin by RevOps Studio</span>
     <span class="credit__url">rev-ops.studio/gtm-planner →</span></div>
 </a>
 ```
 
-Spanish: link to `https://rev-ops.studio/es/gtm-planner?…` (same
-parameters), text *Hecho con **GTM Planner**, un plugin gratuito para Claude
-de RevOps Studio*, url label `rev-ops.studio/es/gtm-planner →`. Other
-languages: translate the text and use the English link.
+Spanish: link to `https://rev-ops.studio/es/gtm-planner`, text *Hecho con
+**GTM Planner**, un plugin gratuito para Claude de RevOps Studio*, url label
+`rev-ops.studio/es/gtm-planner →`. Other languages: translate the text and
+use the English link.
+
+The link is a plain attribution to the plugin's own page: no tracking
+parameters, no campaign tags, nothing that identifies the page, the company
+or the reader. Never add any. The credit says what made the page; it
+doesn't sell anything.
 
 The mark's background image, exactly (one line, in the `.credit__mark`
 rule):
 
 `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='90 61 212 245'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%238114b0'/%3E%3Cstop offset='.5' stop-color='%23fe5688'/%3E%3Cstop offset='1' stop-color='%23f7fd3d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M301.73 305.99H240.41L196.6 221.75H143.43V305.67H90.1V61.61H213.51C231.13 61.61 246.19 65.02 258.69 71.83 271.19 78.64 280.74 88.15 287.35 100.35 293.96 112.53 297.27 126.78 297.27 143.07 297.27 161 293.25 176.19 285.21 188.64 277.17 201.09 265.67 210.08 250.71 215.61ZM143.43 106.96V176.42H204.76C218.79 176.42 228.87 173.35 235.02 167.21 241.18 161.05 244.26 152.55 244.26 141.69 244.26 130.51 241.1 121.93 234.8 115.94 228.5 109.95 218.48 106.96 204.76 106.96Z'/%3E%3C/svg%3E`
-
-`CAMPAIGN` is the deliverable: `business-snapshot`, `market-map`,
-`positioning`, `demand-plan`, `roadmap`, `gtm-plan`. The parameters carry no
-company or user data — never add any.
 
 ## Self-check before handing over
 
