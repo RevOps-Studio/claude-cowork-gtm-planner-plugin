@@ -90,8 +90,9 @@ Run `/gtm-planner:setup` after installing for a guided walkthrough.
 ### Credentials and privacy
 
 The planner handles no credentials. It ships no build step, no dependencies
-and no runtime of its own — it is Markdown and JSON only; its HTML/CSS
-page templates live inside Markdown files. It reads nothing
+and no runtime of its own — it is Markdown and JSON only. The visual pages
+are written by Claude from a design specification in Markdown; the plugin
+ships no HTML or CSS. It reads nothing
 from your environment, your shell profile, your `.env` files or your
 keychain, and it sends no token anywhere. Every connector in `.mcp.json` is
 an official remote MCP server from its own vendor, declared as a plain

@@ -25,7 +25,7 @@ this planner is designed for.
 | `05-roadmap.md` | Roadmap | Result-milestones; capacity-limited 90 days; parked initiatives with reasons |
 | `00-gtm-plan.md` | Final | The consolidated plan with assumption & evidence ledger and Execution Readiness |
 
-The visual pages of this case are rendered from the deliverable templates in
-`skills/deliverables/templates/`, which use Fluxen as their example content.
+The page blueprints in `skills/deliverables/templates/` use this case for
+their example values.
 That is the one place "Example · fictional company" appears: a real run marks
 each page Confirmed or Draft.

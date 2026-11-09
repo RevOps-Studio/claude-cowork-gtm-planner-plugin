@@ -11,7 +11,7 @@ description: >
   Demand Plan, 90-day Roadmap and the consolidated GTM Plan.
 argument-hint: [step to render, or "all"]
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
   author: "RevOps Studio"
 ---
 
@@ -32,7 +32,7 @@ that language too.
 
 ## What gets rendered
 
-| Deliverable | Rendered when | From | Template |
+| Deliverable | Rendered when | From | Blueprint |
 |---|---|---|---|
 | `01-business-snapshot.html` | intake is confirmed | the confirmed snapshot | `templates/01-business-snapshot.md` |
 | `02-market-map.html` | market-map is confirmed | the confirmed map | `templates/02-market-map.md` |
@@ -41,12 +41,13 @@ that language too.
 | `05-roadmap.html` | roadmap is confirmed | the 90-day table + outline | `templates/05-roadmap.md` |
 | `00-gtm-plan.html` | the GTM Plan is consolidated | the consolidated plan | `templates/00-gtm-plan.md` |
 
-Templates live in `${CLAUDE_PLUGIN_ROOT}/skills/deliverables/`. Each is a
-Markdown file: the slot notes first, then the page body in an `html` code
-block, filled with the fictional Fluxen example. The design system is the
-`html` code block in `assets/design-system.md`; it is copied verbatim, never
-edited per company. (The plugin ships HTML only inside Markdown: the plugin
-directory accepts no `.html` files from it.)
+Everything lives in `${CLAUDE_PLUGIN_ROOT}/skills/deliverables/`, as
+Markdown. `assets/design-system.md` specifies the RevOps Studio visual
+system — tokens, page frame, every component, responsive and print rules —
+with exact values. Each page blueprint in `templates/` lists what goes on
+its page, in what order, which component carries each part, and the rules
+for filling it. You write the HTML and CSS from these specifications; the
+plugin ships no HTML of its own.
 
 ## Process
 
@@ -58,32 +59,24 @@ directory accepts no `.html` files from it.)
    the user asks for it, and then as a draft (status "Draft — not
    confirmed"). If the journey state says `Format: markdown only`, render
    nothing unless the user asks.
-2. **Read the template** for the deliverable and `references/visual-rules.md`.
-3. **Write the body.** Replace every piece of example content with this
-   company's confirmed content, following the template's slot notes. Keep the template's structure, classes and section order;
-   drop a section only when the step output has nothing for it, and say so
-   in the reply. Translate every visible label into the user's language.
-   The body is what sits inside the template's `html` block — never the
-   Markdown around it, and never the code fences.
-4. **Assemble one self-contained file** in the deliverables folder. Write the
-   body to a temporary file, then join it to the design system:
-
-   ```bash
-   mkdir -p gtm-plan
-   awk '/^```html\r?$/{f=1;next} /^```\r?$/{f=0} f' "${CLAUDE_PLUGIN_ROOT}/skills/deliverables/assets/design-system.md" \
-     | sed 's/<html lang="en">/<html lang="es">/' > gtm-plan/01-business-snapshot.html
-   cat gtm-plan/.body.html >> gtm-plan/01-business-snapshot.html && rm gtm-plan/.body.html
-   ```
-
-   Use the user's language code in the `sed` (`en`, `es`, `pt`, `fr`…).
-   Without a shell, read `assets/design-system.md` and write the whole
-   document in one file: the contents of its `html` block exactly as they
-   are (without the fences), then the body. The page must start with
-   `<!doctype html>`.
-5. **Link the set.** In every deliverable already in the folder, turn the new
-   one's tab into a link, e.g. for positioning:
-   `sed -i 's|<span data-tab="03">\([^<]*\)</span>|<a data-tab="03" href="03-positioning.html">\1</a>|' gtm-plan/*.html`
-6. **Self-check** the file against the checklist at the end of
+2. **Read** the page blueprint and `references/visual-rules.md`, and
+   `assets/design-system.md` unless step 3 lets you reuse a stylesheet.
+3. **Take the stylesheet.** If another deliverable for this company is
+   already in the folder, read it and reuse its `<style>` block exactly as
+   it is. Otherwise write the complete stylesheet from the design system:
+   every token and every component, not only this page's, so the pages that
+   follow can copy it unchanged.
+4. **Write the page** as one self-contained file in the deliverables folder
+   (create the folder if needed), following the design system's "How a page
+   is built": the head with fonts and the stylesheet, then the body laid out
+   as the blueprint says and filled with this company's confirmed content.
+   Drop a section only when the step output has nothing for it, and say so
+   in the reply. Translate every visible label into the user's language and
+   set `lang` accordingly.
+5. **Link the set.** Edit every deliverable already in the folder: turn the
+   new page's tab from a `span` into a link (`<a data-tab="03"
+   href="03-positioning.html">`), keeping its label.
+6. **Self-check** the page against the checklist at the end of
    `references/visual-rules.md`. Fix what fails before telling the user.
 7. **Hand it over** in two or three lines: the file path, that it opens in
    any browser and prints to PDF (landscape) from the browser's print
@@ -111,8 +104,9 @@ pushback, no second ask. `on` restores it.
   plausible number.
 - No dropping of flags (`assumption`, `needs-benchmark`, `unverified-claim`,
   estimates) or open questions to make a page cleaner.
-- No editing of the design system, no external images, no company logos
-  fetched from the web, no scripts.
+- No departing from the design system: no colours, fonts or effects of
+  your own, no external images, no company logos fetched from the web, no
+  scripts.
 - No leftover example content: "Fluxen", its figures or the "Example ·
   fictional company" status never appear in a real deliverable.
 - No rendering before the step is confirmed unless the user asks, and then

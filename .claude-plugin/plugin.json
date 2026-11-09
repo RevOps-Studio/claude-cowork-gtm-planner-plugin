@@ -1,7 +1,7 @@
 {
   "name": "gtm-planner",
   "displayName": "Go-to-Market Planner",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Build a defensible go-to-market plan — positioning, demand engines and a 90-day roadmap — through five gated decisions, with open questions instead of invented data and a shareable one-page visual for every step.",
   "author": {
     "name": "RevOps Studio",
