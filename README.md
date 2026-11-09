@@ -19,13 +19,13 @@ RevOps Studio uses with its B2B clients:
 
 ## The journey
 
-| Step | Command | You get |
-|------|---------|---------|
-| 1. Intake | `/gtm-planner:intake` | **Business Snapshot** — an honest, structured picture of your business today |
-| 2. Market Map | `/gtm-planner:market-map` | **Market Map** — three layers of competition, positioning axes, real gaps vs. holes |
-| 3. Positioning | `/gtm-planner:positioning` | **Positioning Architecture** — category decision, core promise, tested pillars, messages, anti-messages |
-| 4. Demand Plan | `/gtm-planner:demand-plan` | **Demand Plan** — 3–5 demand engines and a phased channel mix with sourced benchmarks |
-| 5. Roadmap | `/gtm-planner:roadmap` | **90-Day Roadmap + the consolidated GTM Plan** |
+| Step | Command | You get | And on one page |
+|------|---------|---------|-----------------|
+| 1. Intake | `/gtm-planner:intake` | **Business Snapshot** — an honest, structured picture of your business today | key figures, eight cards, open questions with confidence |
+| 2. Market Map | `/gtm-planner:market-map` | **Market Map** — three layers of competition, positioning axes, real gaps vs. holes | the three rings, the positioning map with its gaps |
+| 3. Positioning | `/gtm-planner:positioning` | **Positioning Architecture** — category decision, core promise, tested pillars, messages, anti-messages | the category matrix, the promise, pillars with their test |
+| 4. Demand Plan | `/gtm-planner:demand-plan` | **Demand Plan** — 3–5 demand engines and a phased channel mix with sourced benchmarks | engine coverage, time to first signal, visible discards |
+| 5. Roadmap | `/gtm-planner:roadmap` | **90-Day Roadmap + the consolidated GTM Plan** | the 90-day Gantt worked back from the goal, and the full plan |
 
 Or run the whole journey with one command:
 
@@ -35,6 +35,23 @@ Or run the whole journey with one command:
 
 Each step ends with a confirm-or-correct checkpoint. Your progress persists
 between sessions, so the plan can be built across a week of short sessions.
+
+## Visual deliverables
+
+Every confirmed step also leaves you a page you can share: a self-contained
+HTML file in a `gtm-plan/` folder that opens in any browser, works on a
+phone, and prints to a clean landscape PDF. The five pages link to each
+other, and the journey ends with the consolidated GTM Plan in the same
+format. Run `/gtm-planner:deliverables` to re-render any of them.
+
+![The 90-day roadmap of the sample case](sample-output/visual/previews/05-roadmap.webp)
+
+The pages follow the same rule as the plan: they show what you confirmed
+and nothing else. No figure appears on a page that is not in the step it
+comes from, and every flag and open question stays visible — a visual that
+needs a number you don't have shows the gap. Each page ends with a one-line
+credit to the plugin; set `Deliverable credit: off` in the journey state to
+drop it, or `Format: markdown only` to skip the pages altogether.
 
 ## What makes it different
 
@@ -75,13 +92,19 @@ Run `/gtm-planner:setup` after installing for a guided walkthrough.
 ### Credentials and privacy
 
 The planner handles no credentials. It ships no build step, no dependencies
-and no runtime of its own — it is Markdown and JSON only. It reads nothing
+and no runtime of its own — it is Markdown, JSON and static HTML/CSS
+templates. It reads nothing
 from your environment, your shell profile, your `.env` files or your
 keychain, and it sends no token anywhere. Every connector in `.mcp.json` is
 an official remote MCP server from its own vendor, declared as a plain
 `https://` endpoint with no headers and no environment variables; the Claude
 client performs the OAuth flow and holds the resulting token. Revoking a
 connector in Claude is enough to cut the planner off from it.
+
+The visual deliverables contain no scripts and no tracking. Opening one
+loads its two typefaces from Google Fonts; offline, it falls back to system
+fonts. Its credit link carries UTM parameters naming the deliverable type
+only — never your company or any of your data.
 
 Your privacy is covered by the [RevOps Studio privacy
 policy](https://rev-ops.studio/en/privacy-policy/).
@@ -90,8 +113,9 @@ policy](https://rev-ops.studio/en/privacy-policy/).
 
 `sample-output/` contains a complete end-to-end case — a fictional company
 taken through all five steps in zero-connector mode, including the
-consolidated GTM Plan with its assumption & evidence ledger. If you read
-one thing in this repo, read that. A 60–90s walkthrough lives in
+consolidated GTM Plan with its assumption & evidence ledger, and
+`sample-output/visual/` holds the six pages it produced. If you read one
+thing in this repo, read that. A 60–90s walkthrough lives in
 `demo-script.md`.
 
 ## Quick start
@@ -114,7 +138,7 @@ final plan — and always show their sources. Progress lives in
 `.claude/gtm-planner.local.md` in your project (template in `settings/`).
 
 ```
-skills/     plan · setup · intake · market-map · positioning · demand-plan · roadmap
+skills/     plan · setup · intake · market-map · positioning · demand-plan · roadmap · deliverables
 agents/     materials-analyst · market-researcher · benchmark-researcher · plan-qa
 ```
 
@@ -137,6 +161,9 @@ the discipline is the product.
 - **What it does not do:** execute campaigns, write outreach at scale, or
   replace the conversion/deployment/measurement workstreams (it maps them
   honestly in each plan's Execution Readiness section).
+- **Files it writes:** the journey state (`.claude/gtm-planner.local.md`)
+  and the step outputs in `gtm-plan/` — Markdown plus self-contained HTML
+  pages with no scripts.
 - **Data it touches:** user-provided materials; optionally HubSpot (read),
   Notion (write, user-directed), Similarweb/Ahrefs (read). Full detail per
   connector in `connectors-and-permissions.md`. The plugin reads no

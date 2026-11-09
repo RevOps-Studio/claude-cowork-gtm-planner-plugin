@@ -1,0 +1,191 @@
+<!--
+  TEMPLATE · Step 2 · Market Map (one page)
+  Body fragment appended to assets/head.html. Replace ALL Fluxen content.
+
+  Slots
+  - Hero title: the map's conclusion in one line (who the real rival is, or
+    where the open space sits). Lede: the executive summary in one sentence.
+  - Three layers: rings stay as they are (labels only change language). The
+    lists hold the names from the confirmed map: layer 1 direct, layer 2
+    category, layer 3 non-competitive alternatives. The callout states where
+    deals are actually lost — only if the map says so.
+  - Positioning map (.pmap): the two axes that differentiate this market.
+      · .ax--xl / .ax--xr = left / right ends of the horizontal axis;
+        .ax--yt / .ax--yb = top / bottom ends of the vertical axis.
+      · Each competitor: <span class="pt" style="--x:12%;--y:85%">Name</span>
+        (x from the left, y from the bottom, 5–95%). Near the right edge add
+        .pt--right so the label sits left of its dot.
+      · The company today: .pt--you, placed where the map honestly says it
+        sits, even if that is "nowhere".
+      · Each [GAP]: <div class="gap" style="--x:80%;--y:20%;--w:26%">
+        <span class="chip chip--gap">GAP</span></div>; each
+        [GAP HYPOTHESIS]: .gap--hyp with <span class="chip chip--hyp">GAP HYPOTHESIS</span>.
+      · Positions are a qualitative reading of the map, not measurements.
+        Keep the "qualitative placement" note under the plot.
+  - Priority competitors: the 3–5 analysed, one card each: claimed category
+    (.claim), promise, strength, vulnerability, source (.src).
+  - Hypotheses: the 2–3 positioning hypotheses with their risk.
+  - Open questions panel + foot + credit, as in every deliverable.
+-->
+<title>Market Map — Fluxen</title>
+<meta name="description" content="Market Map for Fluxen, built with GTM Planner (Go2Rev methodology).">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero__top">
+      <div class="eyebrow"><span>GTM Planner</span><span>Market Map</span><span>Fluxen</span></div>
+      <div class="status">Example · fictional company · figures invented</div>
+    </div>
+    <div class="hero__body">
+      <div>
+        <h1 class="hero__title">The real rival is <span class="grad">doing nothing until the audit</span></h1>
+        <p class="hero__lede">Giants own the corporate suite, integrators own the cheap dashboard. The mid-size plant without an energy manager is thinly served.</p>
+      </div>
+      <nav class="tabs" aria-label="Plan deliverables">
+        <a data-tab="01" href="01-business-snapshot.html">1 Snapshot</a>
+        <a data-tab="02" href="02-market-map.html" aria-current="page">2 Market</a>
+        <a data-tab="03" href="03-positioning.html">3 Positioning</a>
+        <a data-tab="04" href="04-demand-plan.html">4 Demand</a>
+        <a data-tab="05" href="05-roadmap.html">5 Roadmap</a>
+        <a data-tab="00" href="00-gtm-plan.html">GTM Plan</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title"><span class="n">01</span>Three layers of competition</h2>
+      <p class="section__aside">Who the buyer weighs you against, from the same offer out to doing nothing</p>
+    </div>
+    <div class="split">
+      <div class="rings" role="img" aria-label="Three concentric layers of competition">
+        <div class="ring ring--3"><span>Layer 3<br>alternatives</span></div>
+        <div class="ring ring--2"><span>Layer 2<br>category</span></div>
+        <div class="ring ring--1"><span>Layer 1<br>direct</span></div>
+      </div>
+      <div>
+        <div class="layer layer--1"><h4>Direct competitors <small>same offer, same ICP</small></h4>
+          <div class="chips"><span class="chip">Schneider EcoStruxure</span><span class="chip">Siemens energy suites</span><span class="chip">Spacewell Energy (Dexma)</span><span class="chip">Wattabit</span><span class="chip">Local SaaS entrants</span></div></div>
+        <div class="layer layer--2"><h4>Category competitors <small>same job, different offer</small></h4>
+          <div class="chips"><span class="chip">Integrators' white-label dashboards</span><span class="chip">Energy consultancies, periodic audits</span><span class="chip">Utilities' free monitoring portals</span></div></div>
+        <div class="layer layer--3"><h4>Non-competitive alternatives <small>what they do without the category</small></h4>
+          <div class="chips"><span class="chip">Spreadsheets + utility bills</span><span class="chip">Hiring an energy manager</span><span class="chip">Doing nothing until the audit</span></div></div>
+        <p class="callout">Most lost deals in this segment go to layer 3, not to a competitor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title"><span class="n">02</span>Positioning map</h2>
+      <p class="section__aside">The axes this market actually differentiates on, who holds which position, and the open space</p>
+    </div>
+    <div class="split split--wide">
+      <div>
+        <div class="pmap" role="img" aria-label="Positioning map">
+          <span class="ax ax--xl">← Suite project, months to live</span>
+          <span class="ax ax--xr">Live in days, on existing meters →</span>
+          <span class="ax ax--yt">↑ Corporate energy teams</span>
+          <span class="ax ax--yb">↓ Plants with no energy manager</span>
+          <div class="gap" style="--x:79%;--y:24%;--w:30%"><span class="chip chip--gap">GAP</span></div>
+          <div class="gap gap--hyp" style="--x:77%;--y:70%;--w:24%"><span class="chip chip--hyp">GAP HYPOTHESIS</span></div>
+          <span class="pt" style="--x:13%;--y:86%">Schneider</span>
+          <span class="pt" style="--x:20%;--y:74%">Siemens</span>
+          <span class="pt" style="--x:47%;--y:80%">Dexma</span>
+          <span class="pt" style="--x:58%;--y:52%">Wattabit</span>
+          <span class="pt" style="--x:30%;--y:30%">Integrators</span>
+          <span class="pt pt--you" style="--x:48%;--y:40%">Fluxen today</span>
+        </div>
+        <p class="src" style="margin-top:12px">Qualitative placement from public positioning, not measured data</p>
+      </div>
+      <div class="grid">
+        <article class="card"><span class="chip chip--gap">GAP</span>
+          <h3 class="card__title" style="margin-top:12px">Audit-ready energy intelligence for plants without an energy manager</h3>
+          <ul class="test">
+            <li><b>Relevant</b><span>The audit is dated, budgeted pain.</span></li>
+            <li><b>Open</b><span>Nobody claims the plant with no energy manager.</span></li>
+            <li><b>Reachable</b><span>14 live plants, 92% retention, deployments in days.</span></li>
+          </ul></article>
+        <article class="card card--line"><span class="chip chip--hyp">GAP HYPOTHESIS</span>
+          <h3 class="card__title" style="margin-top:12px">Multi-plant standardization for industrial groups</h3>
+          <p>Attractive, but Dexma and the giants can claim it credibly. Needs proof Fluxen does not have yet.</p></article>
+        <article class="card card--line"><h3 class="card__title">Fluxen today</h3>
+          <p>No claimed category: the website reads like a generic IoT tool.</p><span class="src">declared site copy</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title"><span class="n">03</span>Priority competitors</h2>
+      <p class="section__aside">The four that matter most for Fluxen's decisions, not the biggest names</p>
+    </div>
+    <div class="grid g4">
+      <article class="card comp"><h4>Schneider EcoStruxure</h4><p class="claim">Enterprise energy and sustainability platform</p>
+        <p>End-to-end visibility at corporate scale, for multinationals. Brand authority makes it the safe choice.</p>
+        <div class="vuln"><b>Vulnerability</b><p>Oversized for a single mid-size plant; long enterprise cycles.</p></div>
+        <span class="src">schneider-electric.com, product pages</span></article>
+      <article class="card comp"><h4>Spacewell Energy (Dexma)</h4><p class="claim">Energy SaaS for building portfolios</p>
+        <p>Analytics across many sites for ESCOs and facility managers. Mature product, partner channel.</p>
+        <div class="vuln"><b>Vulnerability</b><p>Building-centric: a weaker fit for production-line loads.</p></div>
+        <span class="src">spacewell.com</span></article>
+      <article class="card comp"><h4>Wattabit</h4><p class="claim">Spanish energy monitoring SaaS</p>
+        <p>The closest local analog: local and flexible, across buildings and industry.</p>
+        <div class="vuln"><b>Vulnerability</b><p>Generalist; little audit or ISO framing visible on its site.</p></div>
+        <span class="src">public content · flagged assumption</span></article>
+      <article class="card comp"><h4>Electrical integrators</h4><p class="claim">Dashboard bundled with metering work</p>
+        <p>Already inside the plant and trusted by maintenance, at near-zero software price.</p>
+        <div class="vuln"><b>Vulnerability</b><p>No alerts, analysis or audit outputs; abandoned after handover.</p></div>
+        <span class="src">pattern across integrator sites · inference</span></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title"><span class="n">04</span>Positioning hypotheses for step 3</h2>
+      <p class="section__aside">Directions with an argument, not decisions</p>
+    </div>
+    <div class="grid g3">
+      <article class="card"><div class="q-label">H1</div><h3 class="card__title">The audit-ready EMS for plants without an energy manager</h3>
+        <p>Rides the gap; a dated compliance deadline is what beats doing nothing.</p></article>
+      <article class="card"><div class="q-label">H2</div><h3 class="card__title">Days-to-live energy intelligence, the anti-suite</h3>
+        <p><b>Risk:</b> everyone claims "easy"; weakly defensible on its own.</p></article>
+      <article class="card"><div class="q-label">H3</div><h3 class="card__title">The energy copilot that pays for itself in found waste</h3>
+        <p><b>Risk:</b> needs savings proof Fluxen has not systematized yet.</p></article>
+    </div>
+  </section>
+
+  <section class="panel section" aria-labelledby="oq">
+    <div class="section__head">
+      <h2 class="section__title" id="oq"><span class="n">05</span>Open questions</h2>
+      <p class="section__aside">What the map rests on that is not settled yet</p>
+    </div>
+    <div class="table-wrap"><table class="tbl">
+      <thead><tr><th>Type</th><th>Question</th><th>Confidence</th><th>Next step</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip chip--dark">assumption</span></td><td>How deep Wattabit's ISO and audit features really go</td>
+          <td><span class="meter" data-level="1"><i></i><i></i><i></i><b>Low</b></span></td><td class="soft">Check their product docs before writing battlecards</td></tr>
+        <tr><td><span class="chip chip--dark">missing data</span></td><td>Competitor traffic and channel mix</td>
+          <td><span class="meter" data-level="0"><i></i><i></i><i></i><b>—</b></span></td><td class="soft">Optional: connect Similarweb; web estimates meanwhile</td></tr>
+        <tr><td><span class="chip chip--dark">assumption</span></td><td>Integrator dashboards are what deals are most often lost to</td>
+          <td><span class="meter" data-level="2"><i></i><i></i><i></i><b>Medium</b></span></td><td class="soft">Confirm in the three win/loss interviews</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <footer class="foot">
+    <p class="foot__note"><b>Category dynamics:</b> energy-cost volatility and ISO 50001 pressure raise the floor of demand, while the suites move upmarket toward sustainability reporting, widening the mid-market gap.</p>
+    <p class="foot__src">Web research + declared inputs · Similarweb and Ahrefs not connected<br>Go2Rev methodology · step 2 of 5</p>
+  </footer>
+</main>
+
+<a class="credit" href="https://rev-ops.studio/gtm-planner?utm_source=gtm-planner&amp;utm_medium=deliverable&amp;utm_campaign=market-map">
+  <div class="wrap"><span class="credit__mark" aria-hidden="true"></span>
+    <span class="credit__text">Built with <b>GTM Planner</b>, a free Claude plugin by RevOps Studio</span>
+    <span class="credit__url">rev-ops.studio/gtm-planner →</span></div>
+</a>
+</body>
+</html>

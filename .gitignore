@@ -14,6 +14,7 @@ __MACOSX/
 # Local journey state produced when testing the planner in this repo.
 # It holds a real company's business data — never commit it.
 .claude/gtm-planner.local.md
+gtm-plan/
 
 # Eval run output (regenerated on every run)
 evals/results/

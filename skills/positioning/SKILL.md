@@ -88,8 +88,10 @@ Respond in the language the user is writing in.
    minutes of the sales pitch, content themes that fit and clash.
 9. **Coherence check:** category consistent with the Map? Promise consistent
    with real customer evidence? Every pillar passes the three-part test?
-10. **Present + open questions.** On confirmation, update journey state and
-    point to `/gtm-planner:demand-plan`.
+10. **Present + open questions.** On confirmation, update journey state,
+    save the architecture as `gtm-plan/03-positioning.md`, render its
+    one-page visual with the `deliverables` skill, and point to
+    `/gtm-planner:demand-plan`.
 
 ## When the user skips the groundwork
 

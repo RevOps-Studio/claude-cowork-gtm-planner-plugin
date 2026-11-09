@@ -71,7 +71,9 @@ Respond in the language the user is writing in, whatever it is.
 8. **On confirmation**, create the journey state file from
    `${CLAUDE_PLUGIN_ROOT}/settings/gtm-planner.local.md.example` if it does
    not exist yet, then update it (step 1 → confirmed,
-   log resolved/pending open questions) and point to the next step:
+   log resolved/pending open questions), save the confirmed snapshot as
+   `gtm-plan/01-business-snapshot.md`, render its one-page visual with the
+   `deliverables` skill, and point to the next step:
    `/gtm-planner:market-map`.
 
 ## Snapshot sections
