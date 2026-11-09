@@ -9,13 +9,16 @@ fonts or effects of your own.
 
 - One self-contained file: a doctype, `<html lang="…">` in the user's
   language, a `<head>` with `meta charset="utf-8"`, the viewport meta, the
-  title, a meta description and the font link below, one `<style>` block,
-  then the body. No scripts, no external images, no other stylesheets.
-- Fonts: preconnect to `https://fonts.googleapis.com` and
-  `https://fonts.gstatic.com` (crossorigin), then load
-  `https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap`.
-  Every font stack ends in system fallbacks, so the page stays readable
-  offline.
+  title and a meta description, one `<style>` block, then the body.
+- **Nothing external.** No web fonts, font services, scripts, external
+  images, other stylesheets or any other resource fetched from the network.
+  A page opens with nothing loaded from anywhere — the directory's policy
+  asks a plugin to own every resource it renders, and a page the user sends
+  to their board shouldn't call any third party when it is opened.
+- **Fonts by name only.** The stacks below name Manrope and JetBrains Mono
+  first, so they are used wherever the reader has them installed, then fall
+  back to the system's own fonts. The layout must hold with the fallbacks:
+  never size anything to one font's metrics.
 - **One stylesheet per company.** The first deliverable written for a company
   carries the complete stylesheet: every section of this specification, not
   only the components that page uses. Every later page copies that `<style>`
@@ -73,7 +76,8 @@ fonts or effects of your own.
 
 - Sans: Manrope, then ui-sans-serif, system-ui, -apple-system, "Segoe UI",
   sans-serif. Body text 16px, line-height 1.55, weight 400, antialiased.
-- Mono: JetBrains Mono, then "SF Mono", Menlo, Consolas, monospace. Used for
+- Mono: JetBrains Mono, then ui-monospace, "SF Mono", Menlo, Consolas,
+  monospace. Used for
   figures, labels, eyebrows, chips, sources and section numbers.
 - Labels (`.label`): mono 500, 12px, letter-spacing .14em, uppercase,
   `--fg-3`.

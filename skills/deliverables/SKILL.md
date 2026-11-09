@@ -86,8 +86,8 @@ plugin ships no HTML of its own.
 ## The credit line
 
 Every deliverable ends with a one-line credit: *Built with GTM Planner, a
-free Claude plugin by RevOps Studio*, linking to the plugin's page with
-UTM parameters that name the deliverable (exact markup and links in
+free Claude plugin by RevOps Studio*, linking to the plugin's page with no
+tracking parameters (exact markup and links in
 `references/visual-rules.md`). It is the only mention of RevOps Studio in the
 deliverable. Never add sales copy, calls to action or service offers
 anywhere else — least of all in Execution Readiness, which the methodology

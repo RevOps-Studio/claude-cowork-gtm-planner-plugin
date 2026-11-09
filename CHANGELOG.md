@@ -13,6 +13,14 @@ portal's Validate does.
 - **The journey-state template is `settings/gtm-planner.local.template.md`.**
   The intake, plan and setup skills point to the new name. What it holds is
   unchanged.
+- **Pages load nothing from the network.** The design system no longer
+  links Google Fonts: the stacks name Manrope and JetBrains Mono, used where
+  installed, then fall back to system fonts. The directory's policy asks a
+  plugin to own every external resource it renders (3F), and a page sent to
+  a board shouldn't call a third party when it opens.
+- **The credit line carries no tracking.** It still links to the plugin's
+  page, without the UTM parameters, so it reads as attribution rather than
+  promotion (policy 4C). `Deliverable credit: off` still removes it.
 - **Plain front matter.** The deliverables skill's `argument-hint` mixed
   plain words and quotes in a list item (`FILE_NOT_PLAIN`), which left the
   plugin "couldn't be read completely". It is now `[step to render or all]`,

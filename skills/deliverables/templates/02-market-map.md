@@ -53,7 +53,7 @@ The page blueprint: what goes on this page and in what order. Build it with the 
 6. **05 Open questions** — dark panel, same table as the snapshot.
 7. **Foot** — note "**Category dynamics:** …"; sources line and "step 2
    of 5".
-8. **Credit strip**, campaign `market-map`.
+8. **Credit strip**, unless the journey state turns it off.
 
 Example, for tone only: title "The real rival is doing nothing until the
 audit"; axes "← Suite project, months to live" / "Live in days, on existing

@@ -52,4 +52,4 @@ The page blueprint: what goes on this page and in what order. Build it with the 
    after the question.
 10. **Foot** — note "**What this plan does not solve:** …"; sources line
     and "step 4 of 5".
-11. **Credit strip**, campaign `demand-plan`.
+11. **Credit strip**, unless the journey state turns it off.

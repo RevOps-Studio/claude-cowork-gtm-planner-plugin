@@ -52,4 +52,4 @@ The page blueprint: what goes on this page and in what order. Build it with the 
 9. **07 Open questions** — dark panel.
 10. **Foot** — note on the gate (confirmed or pending); sources "Built on
     the confirmed Snapshot and Market Map" and "step 3 of 5".
-11. **Credit strip**, campaign `positioning`.
+11. **Credit strip**, unless the journey state turns it off.
