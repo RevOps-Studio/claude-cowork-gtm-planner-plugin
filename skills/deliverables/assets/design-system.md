@@ -1,361 +1,406 @@
-# Design system — deliverable head
+# Design system
 
-The RevOps Studio visual system for every GTM Planner deliverable. The HTML
-in the block below is the opening of every page: doctype, fonts and the full
-stylesheet, up to (not including) `</head>`. Copy it verbatim — extract it
-with the command in `SKILL.md`, or copy the block by hand. Never edit it per
-company: the content changes, the system does not.
+The RevOps Studio visual system for every GTM Planner deliverable, written as
+a specification. You build each page's stylesheet from it. The values here
+are exact: use them as given, never approximate them, never add colours,
+fonts or effects of your own.
 
-```html
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="GTM Planner by RevOps Studio">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap">
-<style>
-/* GTM Planner deliverable kit · RevOps Studio visual system.
-   This block is copied verbatim into every deliverable. Do not edit it per
-   company: the content changes, the system does not. */
-:root{
-  --ink:#0a0612; --ink-2:#14091f; --ink-3:#1f132e; --ink-4:#2c1d40; --line-dark:#3a2954;
-  --paper:#faf7f2; --paper-2:#f4ede2; --paper-3:#e9dfd0; --line:#d6c9b3; --line-soft:#e6dccb;
-  --fg:#14091f; --fg-2:#4a3d5c; --fg-3:#7a6e8a;
-  --fg-on-dark:#faf7f2; --fg-on-dark-2:#c9bdd6; --fg-on-dark-3:#8a7c9e; --lilac:#a99bbf;
-  --purple-900:#5b0b87; --purple-700:#8114b0; --purple-500:#b427a3; --magenta:#e13798;
-  --pink:#fe5688; --coral:#fb9a6a; --yellow:#f7fd3d; --warn:#f8dd4b; --ok:#2dd4a8;
-  --grad:linear-gradient(135deg,#8114b0 0%,#c129a1 32%,#fe5688 58%,#fb9a6a 78%,#f7fd3d 100%);
-  --grad-bar:linear-gradient(90deg,#b427a3 0%,#e13798 30%,#fe5688 62%,#fb9a6a 100%);
-  --grad-text:linear-gradient(90deg,#d42ea0 0%,#fe5688 45%,#fb9a6a 78%,#f3d64a 100%);
-  --sans:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
-  --r-sm:8px; --r-md:14px; --r-lg:22px; --r-xl:30px; --r-pill:999px;
-  --gutter:clamp(16px,4.4vw,86px); --max:1760px;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;print-color-adjust:exact;-webkit-print-color-adjust:exact}
-body{margin:0;background:var(--paper);color:var(--fg);font:400 16px/1.55 var(--sans);font-feature-settings:"ss01","cv11";-webkit-font-smoothing:antialiased}
-a{color:inherit}
-b,strong{font-weight:700}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-.mono{font-family:var(--mono)}
-.grad{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
-.muted{color:var(--lilac)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+## How a page is built
 
-/* ── Hero ─────────────────────────────────────────── */
-.hero{position:relative;overflow:hidden;color:var(--fg-on-dark);
-  background:radial-gradient(ellipse 55% 140% at 92% -10%,rgba(91,11,135,.55) 0%,transparent 62%),
-             radial-gradient(ellipse 35% 90% at 78% -20%,rgba(254,86,136,.22) 0%,transparent 60%),var(--ink)}
-.hero .wrap{padding-top:clamp(36px,4vw,64px);padding-bottom:clamp(36px,3.6vw,56px)}
-.hero__top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
-.eyebrow{font:500 13px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--pink)}
-.eyebrow span+span::before{content:"·";margin:0 .7em;color:var(--pink)}
-.status{font:500 13px/1 var(--mono);color:var(--fg-on-dark-2);border:1px solid var(--line-dark);border-radius:var(--r-pill);padding:11px 18px;white-space:nowrap}
-.status--draft{color:var(--warn);border-color:rgba(248,221,75,.45)}
-.status--ok::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:9px;vertical-align:1px}
-.hero__body{display:flex;justify-content:space-between;align-items:flex-end;gap:32px 48px;flex-wrap:wrap;margin-top:clamp(28px,3vw,44px)}
-.hero__body>:first-child{flex:1 1 720px;min-width:0}
-.hero__body>:last-child:not(:first-child){flex:0 1 auto}
-.hero__title{margin:0;font:800 clamp(38px,4.3vw,72px)/1.04 var(--sans);letter-spacing:-.035em;max-width:24ch}
-.hero__title--wide{max-width:none}
-.hero__lede{margin:18px 0 0;font:400 clamp(16px,1.25vw,22px)/1.45 var(--sans);color:var(--fg-on-dark-2);max-width:62ch}
-.tabs{display:flex;gap:8px;flex-wrap:wrap}
-.tabs--row{margin-top:clamp(24px,2.4vw,36px)}
-.tabs a,.tabs span{font:500 15px/1 var(--sans);color:var(--fg-on-dark-2);text-decoration:none;border:1px solid var(--line-dark);border-radius:var(--r-pill);padding:13px 16px;background:rgba(20,9,31,.5)}
-.tabs span{opacity:.4}
-.tabs a:hover{border-color:var(--fg-on-dark-3)}
-.tabs a[aria-current]{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:600}
+- One self-contained file: a doctype, `<html lang="…">` in the user's
+  language, a `<head>` with `meta charset="utf-8"`, the viewport meta, the
+  title, a meta description and the font link below, one `<style>` block,
+  then the body. No scripts, no external images, no other stylesheets.
+- Fonts: preconnect to `https://fonts.googleapis.com` and
+  `https://fonts.gstatic.com` (crossorigin), then load
+  `https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap`.
+  Every font stack ends in system fallbacks, so the page stays readable
+  offline.
+- **One stylesheet per company.** The first deliverable written for a company
+  carries the complete stylesheet: every section of this specification, not
+  only the components that page uses. Every later page copies that `<style>`
+  block unchanged from a page already in the folder. The set then looks like
+  one document, and nobody has to rebuild it.
+- Define the colours below as custom properties on `:root` and refer to them
+  everywhere else. Inline `style` attributes are allowed only for the
+  positional values named in the components (`grid-column`, `--x`, `--y`,
+  `--w`, `--from`, `--to`).
 
-/* Goal chain: the funnel worked back from the goal */
-.chain{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.chain__step{background:var(--ink-2);border:1px solid var(--line-dark);border-radius:var(--r-md);padding:16px 20px;min-width:96px}
-.chain__step b{display:block;font:500 clamp(22px,1.7vw,30px)/1.1 var(--mono);color:var(--fg-on-dark)}
-.chain__step span{display:block;margin-top:6px;font:400 15px/1.2 var(--mono);color:var(--fg-on-dark-2)}
-.chain__step--goal{background:var(--pink);border-color:var(--pink)}
-.chain__step--goal b,.chain__step--goal span{color:var(--ink)}
-.chain__arrow{color:var(--pink);font:500 14px var(--mono)}
+## Tokens
 
-/* ── Sections ─────────────────────────────────────── */
-main.wrap{padding-top:clamp(32px,3.2vw,56px);padding-bottom:0}
-.section{margin:0 0 clamp(36px,3.4vw,56px)}
-.section__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
-.section__title{margin:0;font:700 clamp(22px,1.7vw,30px)/1.2 var(--sans);letter-spacing:-.02em}
-.section__title .n,.num{font:500 .62em/1 var(--mono);color:var(--purple-700);margin-right:.7em;vertical-align:.18em}
-.section__aside{font:400 15px/1.4 var(--sans);color:var(--fg-3);max-width:60ch}
-.label{font:500 12px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3)}
-p{margin:0 0 .7em}
-.lead{font:500 clamp(17px,1.25vw,21px)/1.5 var(--sans);color:var(--fg);max-width:78ch}
+### Colour
 
-/* KPI strip */
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(16px,2vw,28px);margin-bottom:clamp(28px,2.6vw,40px)}
-.kpi{border-top:2px solid var(--fg);padding-top:18px}
-.kpi b{display:block;font:500 clamp(26px,2.2vw,38px)/1.1 var(--mono);letter-spacing:-.01em}
-.kpi span{display:block;margin-top:10px;font:400 16px/1.4 var(--sans);color:var(--fg-2)}
-.kpi--accent{border-top-color:var(--pink)}
-.kpi--est b::after{content:"est.";font:500 11px var(--mono);color:var(--fg-3);margin-left:8px;vertical-align:.9em;letter-spacing:.08em}
+| Token | Value | Use |
+|---|---|---|
+| `--ink` | `#0a0612` | dark surfaces: hero, panels, credit strip |
+| `--ink-2` | `#14091f` | boxes on dark |
+| `--ink-3` | `#1f132e` | reserved |
+| `--ink-4` | `#2c1d40` | row rules inside dark panels |
+| `--line-dark` | `#3a2954` | borders on dark |
+| `--paper` | `#faf7f2` | page background |
+| `--paper-2` | `#f4ede2` | cards |
+| `--paper-3` | `#e9dfd0` | tracks, empty meter segments on paper |
+| `--line` | `#d6c9b3` | rules and borders on paper |
+| `--line-soft` | `#e6dccb` | table row rules on paper |
+| `--fg` | `#14091f` | text on paper |
+| `--fg-2` | `#4a3d5c` | secondary text on paper |
+| `--fg-3` | `#7a6e8a` | labels, sources, asides |
+| `--on-dark` | `#faf7f2` | text on dark |
+| `--on-dark-2` | `#c9bdd6` | secondary text on dark |
+| `--on-dark-3` | `#8a7c9e` | asides on dark |
+| `--lilac` | `#a99bbf` | muted half of a title; low-impact bars |
+| `--purple-700` | `#8114b0` | section numbers, labels, medium-impact bars |
+| `--purple-500` | `#b427a3` | hypothesis outlines |
+| `--magenta` | `#e13798` | warnings in text, the company's own dot label |
+| `--pink` | `#fe5688` | accents: eyebrow, active tab, goal, meters, risk |
+| `--coral` | `#fb9a6a` | third funnel stage |
+| `--yellow` | `#f7fd3d` | end of the brand gradient only |
+| `--warn` | `#f8dd4b` | draft status, warning chips |
+| `--ok` | `#2dd4a8` | confirmed status dot, pass chips |
 
-/* Cards */
-.grid{display:grid;gap:clamp(14px,1.4vw,24px)}
-.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
-.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(18px,2vw,36px);align-items:start}
-.split--wide{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
-.card{background:var(--paper-2);border-radius:var(--r-lg);padding:clamp(20px,1.7vw,30px)}
-.card--line{background:transparent;border:1px solid var(--line)}
-.card--dark{background:var(--ink);color:var(--fg-on-dark)}
-.card__title{margin:0 0 12px;font:700 19px/1.3 var(--sans);letter-spacing:-.01em}
-.card__title .num{font-size:14px;margin-right:10px}
-.card p,.card li{color:var(--fg-2);font-size:16px;line-height:1.55}
-.card--dark p,.card--dark li{color:var(--fg-on-dark-2)}
-.card ul{margin:0;padding-left:1.1em}
-.card li+li{margin-top:6px}
-.kv{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
-.kv dt{font:500 12px/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3)}
-.kv dd{margin:0;color:var(--fg-2)}
+### Gradients
 
-/* Chips, meters, tags */
-.chip{display:inline-block;font:500 12.5px/1 var(--mono);border:1px solid var(--line);border-radius:var(--r-pill);padding:7px 12px;color:var(--fg-2);white-space:nowrap;background:transparent}
-.chip--dark{border-color:var(--line-dark);color:var(--fg-on-dark-2)}
-.chip--pink{background:var(--pink);border-color:var(--pink);color:var(--ink)}
-.chip--warn{border-color:#d9bf2c;color:#7a6400;background:rgba(248,221,75,.18)}
-.chip--ok{border-color:#2aa886;color:#11624d;background:rgba(45,212,168,.12)}
-.chip--gap{background:var(--grad);border:0;color:#fff;font-weight:700}
-.chip--hyp{border:1px dashed var(--purple-500);color:var(--purple-700)}
-.tbd{display:inline-block;font:600 14px/1 var(--sans);background:var(--pink);color:var(--ink);border-radius:var(--r-sm);padding:4px 8px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.meter{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
-.meter i{display:block;width:18px;height:6px;border-radius:4px;background:#3a2954}
-.meter--light i{background:var(--paper-3)}
-.meter[data-level="1"] i:nth-child(-n+1),.meter[data-level="2"] i:nth-child(-n+2),.meter[data-level="3"] i:nth-child(-n+3){background:var(--pink)}
-.meter b{margin-left:8px;font:700 16px var(--sans)}
-.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--grad)}
-.dot--mid{background:var(--purple-700)}
-.dot--low{background:transparent;border:2px solid var(--purple-500)}
-.src{display:inline-block;font:500 11.5px/1.5 var(--mono);letter-spacing:.04em;color:var(--fg-3)}
-.more{display:inline-block;margin-top:14px;font:500 13px/1 var(--mono);color:var(--purple-700);text-decoration:none}
-.more:hover{text-decoration:underline}
-.panel .more{color:var(--pink)}
-.src::before{content:"↳ "}
-.src a{color:var(--purple-700)}
+- **Brand** (`--grad`): 135deg — `#8114b0` 0%, `#c129a1` 32%, `#fe5688`
+  58%, `#fb9a6a` 78%, `#f7fd3d` 100%. Used for the GAP chip and dots.
+- **Bar** (`--grad-bar`): 90deg — `#b427a3` 0%, `#e13798` 30%, `#fe5688`
+  62%, `#fb9a6a` 100%. Used for high-impact bars, signal bars and the
+  legend swatch.
+- **Text** (`--grad-text`): 90deg — `#d42ea0` 0%, `#fe5688` 45%, `#fb9a6a`
+  78%, `#f3d64a` 100%. Applied to `.grad` spans with background-clip text
+  and a transparent text colour.
 
-/* Dark panel + open-questions / ledger table */
-.panel{background:var(--ink);color:var(--fg-on-dark);border-radius:var(--r-xl);padding:clamp(22px,2.4vw,40px)}
-.panel .section__title{color:var(--fg-on-dark)}
-.panel .section__title .n{color:var(--pink)}
-.panel .section__aside{color:var(--fg-on-dark-3)}
-.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tbl{width:100%;border-collapse:collapse;font-size:16px}
-.tbl th{text-align:left;font:500 12.5px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--fg-3);padding:0 16px 16px 0;border-bottom:1px solid var(--line);white-space:nowrap}
-.tbl td{padding:18px 16px 18px 0;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--fg-2)}
-.tbl td:first-child,.tbl th:first-child{padding-left:0}
-.tbl .strong{color:var(--fg);font-weight:600}
-.panel .tbl th{color:var(--fg-on-dark-2);border-bottom-color:var(--line-dark)}
-.panel .tbl td{color:var(--fg-on-dark);border-bottom-color:var(--ink-4)}
-.panel .tbl td.soft{color:var(--fg-on-dark-2)}
-.risk{font:700 12px/1 var(--mono);letter-spacing:.06em;color:var(--pink);text-transform:uppercase}
+### Type
 
-/* Page foot */
-.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap;padding:clamp(28px,3vw,56px) 0 clamp(28px,2.6vw,44px)}
-.foot__note{max-width:72ch;font-size:clamp(16px,1.15vw,19px);line-height:1.55;color:var(--fg-2)}
-.foot__note b{color:var(--fg)}
-.foot__src{font:400 13px/1.6 var(--mono);color:var(--fg-3);text-align:right}
+- Sans: Manrope, then ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  sans-serif. Body text 16px, line-height 1.55, weight 400, antialiased.
+- Mono: JetBrains Mono, then "SF Mono", Menlo, Consolas, monospace. Used for
+  figures, labels, eyebrows, chips, sources and section numbers.
+- Labels (`.label`): mono 500, 12px, letter-spacing .14em, uppercase,
+  `--fg-3`.
 
-/* Credit strip (residual brand) */
-.credit{display:block;background:var(--ink);color:var(--fg-on-dark-2);text-decoration:none}
-.credit .wrap{display:flex;align-items:center;gap:14px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
-.credit__mark{width:16px;height:18px;flex:none;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='90 61 212 245'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%238114b0'/%3E%3Cstop offset='.5' stop-color='%23fe5688'/%3E%3Cstop offset='1' stop-color='%23f7fd3d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M301.73 305.99H240.41L196.6 221.75H143.43V305.67H90.1V61.61H213.51C231.13 61.61 246.19 65.02 258.69 71.83 271.19 78.64 280.74 88.15 287.35 100.35 293.96 112.53 297.27 126.78 297.27 143.07 297.27 161 293.25 176.19 285.21 188.64 277.17 201.09 265.67 210.08 250.71 215.61ZM143.43 106.96V176.42H204.76C218.79 176.42 228.87 173.35 235.02 167.21 241.18 161.05 244.26 152.55 244.26 141.69 244.26 130.51 241.1 121.93 234.8 115.94 228.5 109.95 218.48 106.96 204.76 106.96Z'/%3E%3C/svg%3E")}
-.credit__text{font:400 14px/1.4 var(--sans)}
-.credit__text b{color:var(--fg-on-dark);font-weight:700}
-.credit__url{margin-left:auto;font:500 13px/1 var(--mono);color:var(--pink)}
-.credit:hover .credit__url{text-decoration:underline}
+### Shape and space
 
-/* ── Roadmap: Gantt ───────────────────────────────── */
-.gantt{--label:34%;--weeks:13;position:relative;overflow-x:auto}
-.gantt__inner{position:relative;min-width:980px}
-.g-row{display:grid;grid-template-columns:var(--label) 1fr;align-items:center;border-bottom:1px solid var(--line-soft);min-height:88px}
-.g-row--head{min-height:0;align-items:end;border-bottom-color:var(--line);padding-bottom:14px}
-.g-track{display:grid;grid-template-columns:repeat(var(--weeks),minmax(0,1fr));align-items:center;padding:0 0 0 12px;position:relative;z-index:1}
-.g-week{font:500 13px/1.35 var(--mono);color:var(--fg-3);text-align:center;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
-.g-week small{display:block;text-transform:none;font-size:13px;letter-spacing:0}
-.g-label{padding:16px 24px 16px 0}
-.g-label h4{margin:0;font:700 clamp(16px,1.1vw,19px)/1.3 var(--sans);letter-spacing:-.01em}
-.g-label h4 .n{font:500 1em var(--mono);color:var(--purple-700);margin-right:.5em}
-.g-label p{margin:5px 0 0;font-size:15px;color:var(--fg-2)}
-.bar{grid-row:1;position:relative;height:36px;border-radius:var(--r-pill);background:var(--grad-bar);display:flex;align-items:center;padding:0 16px;min-width:0}
-.bar--mid{background:var(--purple-700)}
-.bar--low{background:var(--lilac)}
-.bar .ms{position:absolute;left:100%;margin-left:14px;white-space:nowrap;font:500 15px/1 var(--sans);color:var(--fg-2)}
-.bar .ms::before,.ms-in::before{content:"◆ ";font-size:.85em}
-.bar--in .ms{position:static;margin:0;color:#fff;font-weight:600;overflow:hidden;text-overflow:ellipsis}
-.bar--in.bar--low .ms{color:var(--ink)}
-.blackout{position:absolute;top:0;bottom:0;z-index:0;border-radius:var(--r-md);
-  left:calc(var(--label) + 12px + (100% - var(--label) - 12px) * (var(--from) - 1) / var(--weeks));
-  width:calc((100% - var(--label) - 12px) * (var(--to) - var(--from) + 1) / var(--weeks));
-  background:repeating-linear-gradient(-45deg,rgba(214,201,179,.55) 0 2px,transparent 2px 13px),rgba(233,223,208,.6)}
-.blackout span{display:block;text-align:center;padding-top:6px;font:500 13px/1.35 var(--mono);color:var(--fg-2)}
-.legend{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:20px;font-size:15px;color:var(--fg-2)}
-.legend i{display:inline-block;width:38px;height:12px;border-radius:8px;background:var(--grad-bar);margin-right:10px;vertical-align:-1px}
-.legend i.mid{background:var(--purple-700)}
-.legend i.low{background:var(--lilac)}
-.pill-dark{display:inline-block;background:var(--ink);color:#fff;border-radius:var(--r-pill);padding:10px 16px;font:600 15px/1 var(--sans);margin-top:12px}
-.q-label{font:500 15px/1.3 var(--mono);color:var(--purple-700);margin-bottom:12px}
+- Radii: 8px (small), 14px (medium), 22px (large: cards), 30px (extra:
+  panels), 999px (pill).
+- Page gutter `clamp(16px, 4.4vw, 86px)`; content max width 1760px, centred.
+  `.wrap` applies both.
+- Grid gaps `clamp(14px, 1.4vw, 24px)`. Section bottom margin
+  `clamp(36px, 3.4vw, 56px)`.
+- `box-sizing: border-box` everywhere; `print-color-adjust: exact` on
+  `html` so dark surfaces print.
 
-/* ── Market map ───────────────────────────────────── */
-.rings{position:relative;width:100%;aspect-ratio:1;max-width:500px;margin:0 auto}
-.ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;display:flex;justify-content:center}
-.ring span{margin-top:14px;font:500 12.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-align:center}
-.ring--3{width:100%;height:100%;background:var(--paper-2);border:2px dashed var(--pink)}
-.ring--3 span{color:var(--magenta)}
-.ring--2{width:68%;height:68%;background:var(--paper-3)}
-.ring--2 span{color:var(--fg-2)}
-.ring--1{width:37%;height:37%;background:var(--ink);align-items:center}
-.ring--1 span{margin:0;color:var(--fg-on-dark)}
-.layer{border-left:3px solid var(--line);padding:4px 0 4px 18px;margin-bottom:22px}
-.layer--1{border-left-color:var(--ink)}
-.layer--2{border-left-color:var(--lilac)}
-.layer--3{border-left-color:var(--pink)}
-.layer h4{margin:0 0 8px;font:700 17px/1.3 var(--sans)}
-.layer h4 small{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);margin-left:8px}
-.callout{background:var(--ink);color:var(--fg-on-dark);border-radius:var(--r-md);padding:16px 20px;font:600 16px/1.45 var(--sans)}
-.callout::before{content:"→ ";color:var(--pink)}
-.pmap{position:relative;aspect-ratio:16/10;background:var(--paper-2);border-radius:var(--r-lg);overflow:hidden}
-.pmap::before,.pmap::after{content:"";position:absolute;background:var(--line)}
-.pmap::before{left:50%;top:7%;bottom:7%;width:1px}
-.pmap::after{top:50%;left:5%;right:5%;height:1px}
-.ax{position:absolute;font:500 12px/1.3 var(--mono);letter-spacing:.06em;color:var(--fg-3);max-width:28%}
-.ax--xl{left:3%;top:50%;transform:translateY(8px)}
-.ax--xr{right:3%;top:50%;transform:translateY(8px);text-align:right}
-.ax--yt{left:50%;top:3%;transform:translateX(10px)}
-.ax--yb{left:50%;bottom:3%;transform:translateX(10px)}
-.pt{position:absolute;left:var(--x);bottom:var(--y);transform:translate(-50%,50%);display:flex;align-items:center;gap:8px;font:600 14px/1.2 var(--sans);color:var(--fg);white-space:nowrap;z-index:2}
-.pt::before{content:"";width:13px;height:13px;border-radius:50%;background:var(--ink);flex:none}
-.pt--you::before{background:#fff;border:3px solid var(--pink);width:16px;height:16px}
-.pt--you{color:var(--magenta)}
-.pt--right{flex-direction:row-reverse}
-.gap{position:absolute;left:var(--x);bottom:var(--y);width:var(--w,26%);aspect-ratio:1.6;transform:translate(-50%,50%);border-radius:50%;border:2px dashed var(--pink);background:rgba(254,86,136,.08);display:flex;align-items:center;justify-content:center;z-index:1}
-.gap--hyp{border-color:var(--purple-500);background:rgba(180,39,163,.05)}
-.comp h4{margin:0;font:700 18px/1.3 var(--sans)}
-.comp .claim{margin:4px 0 14px;font:500 13px/1.4 var(--mono);color:var(--purple-700)}
-.comp .vuln{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
-.comp .vuln b{color:var(--magenta);font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px}
+## Page frame
 
-/* ── Positioning ──────────────────────────────────── */
-.promise{background:var(--ink);color:var(--fg-on-dark);border-radius:var(--r-xl);padding:clamp(28px,3.4vw,60px);position:relative;overflow:hidden}
-.promise::after{content:"";position:absolute;inset:auto -10% -60% 40%;height:120%;background:radial-gradient(ellipse at center,rgba(254,86,136,.22),transparent 65%)}
-.promise blockquote{margin:12px 0 0;font:800 clamp(28px,3.1vw,54px)/1.08 var(--sans);letter-spacing:-.03em;max-width:24ch;position:relative;z-index:1}
-.promise .fallback{margin-top:22px;color:var(--fg-on-dark-2);font-size:17px;position:relative;z-index:1}
-.promise .why{margin-top:10px;color:var(--fg-on-dark-3);font-size:15px;max-width:80ch;position:relative;z-index:1}
-.matrix tr.is-chosen td{background:linear-gradient(90deg,rgba(254,86,136,.10),rgba(251,154,106,.05));}
-.matrix tr.is-chosen td:first-child{box-shadow:inset 3px 0 0 var(--pink);padding-left:16px}
-.matrix td:first-child{padding-left:16px}
-.matrix th:first-child{padding-left:16px}
-.matrix .meter{gap:4px}
-.matrix .meter i{width:14px}
-.matrix small{display:block;color:var(--fg-3);font-size:13px;margin-top:6px}
-.pillar{display:flex;flex-direction:column}
-.pillar h4{margin:4px 0 8px;font:700 20px/1.25 var(--sans);letter-spacing:-.01em}
-.test{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--line)}
-.test li{display:grid;grid-template-columns:22px 118px 1fr;gap:8px;font-size:14.5px;line-height:1.45;color:var(--fg-2);margin:0 0 9px}
-.test li::before{content:"✓";font:700 14px/1.45 var(--mono);color:#11624d}
-.test li.partial::before{content:"◐";color:#9a7d00}
-.test li.fail::before{content:"✕";color:var(--magenta)}
-.test b{font:500 11.5px/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
-.pillar--cut{opacity:.6;border:1px dashed var(--line);background:transparent}
-.stage{border-top:3px solid var(--ink);padding-top:16px}
-.stage--1{border-top-color:var(--purple-700)}
-.stage--2{border-top-color:var(--pink)}
-.stage--3{border-top-color:var(--coral)}
-.stage .msg{font:700 clamp(18px,1.35vw,23px)/1.3 var(--sans);letter-spacing:-.015em;margin:10px 0 12px}
-.stage ul{margin:0;padding-left:1.1em;color:var(--fg-2);font-size:15px}
-.anti{list-style:none;margin:0;padding:0}
-.anti li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px;padding:14px 0;border-bottom:1px solid var(--line-dark)}
-.anti s{color:var(--fg-on-dark);text-decoration-color:var(--pink);text-decoration-thickness:2px;font-weight:600}
-.anti span{color:var(--fg-on-dark-2);font-size:15px}
+### Hero
 
-/* ── Demand plan ──────────────────────────────────── */
-.cov td{text-align:center}
-.cov td:first-child,.cov th:first-child{text-align:left}
-.cov th{text-align:center}
-.signal{position:relative;height:10px;border-radius:6px;background:var(--paper-3);min-width:140px}
-.signal i{position:absolute;top:0;bottom:0;left:var(--from);right:calc(100% - var(--to));border-radius:6px;background:var(--grad-bar)}
-.signal-scale{display:flex;justify-content:space-between;font:500 11px var(--mono);color:var(--fg-3);margin-top:6px}
-.engine h4{margin:6px 0 8px;font:700 19px/1.3 var(--sans)}
-.engine .meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
-.discard{border:1px dashed var(--line);border-radius:var(--r-md);padding:16px 18px}
-.discard h4{margin:0 0 6px;font:700 16px/1.3 var(--sans);text-decoration:line-through;text-decoration-color:var(--magenta);text-decoration-thickness:2px}
-.discard p{margin:0;font-size:14.5px;color:var(--fg-2)}
-.phase{border-radius:var(--r-lg);padding:22px 24px;background:var(--paper-2)}
-.phase--now{background:var(--ink);color:var(--fg-on-dark)}
-.phase--now li{color:var(--fg-on-dark-2)}
-.phase .q-label{margin-bottom:8px}
-.phase--now .q-label{color:var(--pink)}
-.phase ul{margin:0;padding-left:1.1em;font-size:15.5px;color:var(--fg-2)}
-.phase li+li{margin-top:6px}
+- Full-width dark band (`.hero`, overflow hidden, text `--on-dark`).
+  Background: `--ink` under two radial glows — an ellipse 55% × 140% at 92%
+  −10% from `rgba(91,11,135,.55)` to transparent at 62%, and an ellipse
+  35% × 90% at 78% −20% from `rgba(254,86,136,.22)` to transparent at 60%.
+- Inner `.wrap` padding: top `clamp(36px,4vw,64px)`, bottom
+  `clamp(36px,3.6vw,56px)`.
+- **Top row** (`.hero__top`): flex, space-between, wraps. Left the eyebrow,
+  right the status pill.
+- **Eyebrow** (`.eyebrow`): mono 500, 13px, letter-spacing .2em, uppercase,
+  `--pink`. Its parts are spans separated by a pink " · " drawn before each
+  span after the first.
+- **Status pill** (`.status`): mono 500, 13px, `--on-dark-2`, 1px
+  `--line-dark` border, pill radius, padding 11px 18px, no wrapping.
+  `.status--ok` adds a 7px `--ok` dot before the text; `.status--draft`
+  turns text `--warn` and the border `rgba(248,221,75,.45)`.
+- **Body row** (`.hero__body`): flex, space-between, aligned to the bottom,
+  wraps, gap 32px 48px, top margin `clamp(28px,3vw,44px)`. Its first child
+  grows (`flex: 1 1 720px`, min-width 0); a second child keeps its size.
+- **Title** (`.hero__title`): Manrope 800, `clamp(38px,4.3vw,72px)`,
+  line-height 1.04, letter-spacing −.035em, max width 24ch (none with
+  `.hero__title--wide`). A `.grad` span carries the decisive half; a
+  `.muted` span is `--lilac`.
+- **Lede** (`.hero__lede`): 400, `clamp(16px,1.25vw,22px)`, line-height
+  1.45, `--on-dark-2`, max width 62ch, top margin 18px.
+- **Tabs** (`.tabs`): flex row of pills, gap 8px, wraps. Each link or span:
+  15px Manrope 500, `--on-dark-2`, 1px `--line-dark` border, pill radius,
+  padding 13px 16px, background `rgba(20,9,31,.5)`, no underline. The
+  current page (`aria-current="page"`) is filled `--pink` with white 600
+  text. A deliverable that doesn't exist yet is a span at 40% opacity.
+  `.tabs--row` puts the tabs on their own row with top margin
+  `clamp(24px,2.4vw,36px)`. Always six tabs, in this order, with these
+  labels (translated) and `data-tab` values: "1 Snapshot" (`01`), "2 Market"
+  (`02`), "3 Positioning" (`03`), "4 Demand" (`04`), "5 Roadmap" (`05`),
+  "GTM Plan" (`00`). Each links to its fixed file name.
+- **Goal chain** (`.chain`): flex row, gap 10px, wraps. Each step
+  (`.chain__step`): `--ink-2` background, 1px `--line-dark` border, 14px
+  radius, padding 16px 20px, min width 96px; value in a `b`, mono 500,
+  `clamp(22px,1.7vw,30px)`; label in a span, mono 400 15px `--on-dark-2`,
+  6px above. Arrows between steps are spans (`.chain__arrow`) holding "→", mono
+  14px `--pink`. The goal
+  step (`.chain__step--goal`) is filled `--pink` with `--ink` text.
 
-/* ── GTM Plan (consolidated) ──────────────────────── */
-.dchain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.dchain__step{position:relative;background:var(--ink-2);border:1px solid var(--line-dark);border-radius:var(--r-md);padding:18px 18px 20px;color:var(--fg-on-dark)}
-.dchain__step .label{color:var(--pink)}
-.dchain__step p{margin:10px 0 0;font:600 16px/1.4 var(--sans);color:var(--fg-on-dark)}
-.dchain__step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:20px;color:var(--pink);font:500 14px var(--mono);z-index:1}
-.toc{position:sticky;top:0;z-index:5;background:rgba(250,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
-.toc a{font:500 14px/1 var(--sans);color:var(--fg-2);text-decoration:none;padding:9px 12px;border-radius:var(--r-pill);white-space:nowrap}
-.toc a:hover{background:var(--paper-2)}
-.toc a .n{font:500 12px var(--mono);color:var(--purple-700);margin-right:6px}
-.chapter{border-top:1px solid var(--line);padding-top:clamp(28px,2.6vw,44px)}
-.evidence{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.evidence div{border:1px solid var(--line-dark);border-radius:var(--r-md);padding:16px}
-.evidence b{display:block;font:500 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
-.evidence p{margin:0;font-size:14.5px;color:var(--fg-on-dark-2)}
-.ws h4{margin:0 0 10px;font:700 19px/1.3 var(--sans)}
-.ws .skip{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:15px;color:var(--fg-2)}
-.ws .skip b{display:block;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--magenta);margin-bottom:4px}
+### Main column and sections
 
-/* ── Responsive & print ───────────────────────────── */
-@media (max-width:1100px){
-  .g4,.g5{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .split{grid-template-columns:1fr}
-  .dchain{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .dchain__step::after{display:none}
-  .evidence{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (max-width:680px){
-  .g2,.g3,.g4,.g5,.dchain,.evidence{grid-template-columns:1fr}
-  .anti li{grid-template-columns:1fr;gap:6px}
-  .test li{grid-template-columns:22px 1fr}
-  .test li b{grid-column:2}
-  .test li span{grid-column:2}
-  .credit__url{margin-left:0}
-  .status{white-space:normal;line-height:1.4}
-  .hero__top{flex-direction:column}
-  .foot__src{text-align:left}
-  .pt{font-size:12px}
-  .table-wrap .tbl{min-width:620px}
-  .pmap{aspect-ratio:4/5}
-  .ax{font-size:10.5px;max-width:42%}
-}
-@page{size:A4 landscape;margin:0}
-@media print{
-  html{zoom:.62}
-  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .g5{grid-template-columns:repeat(5,minmax(0,1fr))}
-  .split{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
-  .split--wide{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
-  .dchain{grid-template-columns:repeat(5,minmax(0,1fr))}
-  .evidence{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .toc{position:static}
-  .section,.card,.g-row,.panel,.promise,.phase{break-inside:avoid}
-  .chapter{break-before:page}
-  a{text-decoration:none}
-}
-</style>
-```
+- `main` is a `.wrap` with top padding `clamp(32px,3.2vw,56px)`.
+- A **section** is a `section.section` (bottom margin as in Tokens), opened by
+  a section head. Sections are numbered 01, 02… in page order; the KPI strip,
+  the promise block and the foot are not numbered.
+- **Section head** (`.section__head`): flex, space-between, baseline,
+  wraps, 22px below. Title (`.section__title`): Manrope 700,
+  `clamp(22px,1.7vw,30px)`, line-height 1.2, letter-spacing −.02em. Its
+  number (`.n`) is mono 500 at .62em, `--purple-700`, 0.7em right margin,
+  raised .18em. Aside (`.section__aside`): 15px, `--fg-3`, max 60ch.
+- **Lead paragraph** (`.lead`): 500, `clamp(17px,1.25vw,21px)`, line-height
+  1.5, max 78ch.
+
+### Foot and credit
+
+- **Foot** (`.foot`): flex, space-between, aligned to the bottom, wraps, gap
+  24px 48px, padding `clamp(28px,3vw,56px)` top and
+  `clamp(28px,2.6vw,44px)` bottom. Note (`.foot__note`): max 72ch,
+  `clamp(16px,1.15vw,19px)`, `--fg-2`, its bold lead-in `--fg`. Sources
+  (`.foot__src`): mono 13px, line-height 1.6, `--fg-3`, right-aligned.
+- **Credit strip** (`.credit`): a full-width link on `--ink`, no underline,
+  text `--on-dark-2`. Inside a `.wrap`: flex, centred, gap 14px, 16px
+  vertical padding. Mark (`.credit__mark`): 16 × 18px, the RevOps Studio
+  "R" as a background image — the exact data URI is in
+  `../references/visual-rules.md`. Text (`.credit__text`): 14px, its bold
+  part `--on-dark` 700. URL (`.credit__url`): mono 500 13px `--pink`,
+  pushed right with an auto left margin; underlined on hover.
+
+## Components
+
+### Figures
+
+- **KPI strip** (`.kpis`): grid of auto-fit columns, minimum 170px, gap
+  `clamp(16px,2vw,28px)`, bottom margin `clamp(28px,2.6vw,40px)`. Each
+  `.kpi`: 2px `--fg` top border, 18px top padding; value in a `b`, mono
+  500, `clamp(26px,2.2vw,38px)`, letter-spacing −.01em; label in a span,
+  16px `--fg-2`, 10px above. `.kpi--accent` makes the border `--pink`.
+  `.kpi--est` marks a declared-but-unverified figure: after the value, a
+  `small.est` holding "est." in the page's language, mono 500 11px `--fg-3`,
+  letter-spacing .08em, 8px left margin, raised .9em. It is written in the
+  markup, not generated by CSS, so the stylesheet stays the same in every
+  language.
+- **Confidence / weight meter** (`.meter`): inline-flex of three `i`
+  segments, 18 × 6px, radius 4px, gap 6px, unfilled `#3a2954` (on paper,
+  `.meter--light`, unfilled `--paper-3`). `data-level="1|2|3"` fills that
+  many segments `--pink`; `0` fills none. An optional `b` after the
+  segments carries the word (Low, Medium, High) in Manrope 700 16px, 8px
+  left margin.
+- **Dot** (`.dot`): 12px circle in the brand gradient; `.dot--mid` solid
+  `--purple-700`; `.dot--low` hollow with a 2px `--purple-500` ring.
+
+### Cards and grids
+
+- Grids: `.grid` with `.g2` … `.g5` equal columns. `.split` is two columns
+  5fr / 7fr, gap `clamp(18px,2vw,36px)`, aligned to the top;
+  `.split--wide` swaps them to 7fr / 5fr.
+- **Card** (`.card`): `--paper-2`, 22px radius, padding
+  `clamp(20px,1.7vw,30px)`. Title (`.card__title`): Manrope 700 19px,
+  line-height 1.3, 12px below; its number (`.num`) mono 14px `--purple-700`.
+  Body text 16px `--fg-2`. `.card--line` is transparent with a 1px `--line`
+  border. `.card--dark` is `--ink` with `--on-dark-2` text.
+- **Quarter / phase label** (`.q-label`): mono 500 15px `--purple-700`,
+  12px below.
+- **Dark pill** (`.pill-dark`): `--ink`, white 600 15px, pill radius,
+  padding 10px 16px, 12px above — a dated review or gate.
+- **Callout** (`.callout`): `--ink`, `--on-dark`, 14px radius, padding
+  16px 20px, Manrope 600 16px, preceded by a pink "→ ".
+- **"More" link** (`.more`): mono 500 13px `--purple-700`, no underline
+  until hover; `--pink` inside a dark panel.
+
+### Chips and source lines
+
+- **Chip** (`.chip`): mono 500 12.5px, `--fg-2`, 1px `--line` border, pill,
+  padding 7px 12px, no wrapping. Variants:
+  - `.chip--dark` — on dark panels: border `--line-dark`, text `--on-dark-2`.
+  - `.chip--pink` — filled `--pink`, `--ink` text.
+  - `.chip--warn` — border `#d9bf2c`, text `#7a6400`, fill
+    `rgba(248,221,75,.18)`. For `unverified claim`, `needs benchmark`,
+    `assumption` on paper.
+  - `.chip--ok` — border `#2aa886`, text `#11624d`, fill
+    `rgba(45,212,168,.12)`.
+  - `.chip--gap` — brand gradient fill, no border, white 700.
+  - `.chip--hyp` — dashed 1px `--purple-500` border, `--purple-700` text.
+- `.chips`: flex wrap, gap 8px.
+- **Owner to be named** (`.tbd`): Manrope 600 14px, `--pink` fill, `--ink`
+  text, 8px radius, padding 4px 8px.
+- **Source line** (`.src`): inline-block, mono 500 11.5px, line-height 1.5,
+  letter-spacing .04em, `--fg-3`, preceded by "↳ ". Links inside are
+  `--purple-700`.
+
+### Dark panel and tables
+
+- **Panel** (`.panel`): `--ink`, `--on-dark`, 30px radius, padding
+  `clamp(22px,2.4vw,40px)`. Inside it the section title is `--on-dark`,
+  its number `--pink`, the aside `--on-dark-3`.
+- **Table** (`.tbl`, inside a horizontally scrollable `.table-wrap`): full
+  width, collapsed borders, 16px. Header cells: mono 500 12.5px,
+  letter-spacing .16em, uppercase, `--fg-3`, 16px below, 1px `--line`
+  bottom rule, no wrapping. Body cells: padding 18px 16px 18px 0, 1px
+  `--line-soft` bottom rule, top-aligned, `--fg-2`; `.strong` cells are
+  `--fg` 600. Inside a panel: headers `--on-dark-2` with `--line-dark`
+  rules, cells `--on-dark` with `--ink-4` rules, `.soft` cells
+  `--on-dark-2`.
+- **Risk tag** (`.risk`): mono 700 12px, letter-spacing .06em, uppercase,
+  `--pink`.
+
+### Roadmap: the Gantt
+
+- `.gantt` (horizontal scroll) holds `.gantt__inner` (position relative,
+  min width 980px). Custom properties on `.gantt`: `--label: 34%` (label
+  column) and `--weeks: 13`.
+- Rows (`.g-row`): grid of two columns, `var(--label)` and the rest;
+  centred; 1px `--line-soft` bottom rule; min height 88px. The header row
+  (`.g-row--head`) aligns to the bottom, has a `--line` rule and 14px
+  bottom padding, and no min height.
+- Track (`.g-track`): grid of `--weeks` equal columns, 12px left padding,
+  above the blackout. Week cells (`.g-week`): mono 500 13px, `--fg-3`,
+  centred, uppercase, letter-spacing .04em; a `small` inside shows the
+  date on its own line, not uppercase.
+- Label (`.g-label`, padding 16px 24px 16px 0): an `h4` in Manrope 700
+  `clamp(16px,1.1vw,19px)` with its number (`.n`) in mono `--purple-700`;
+  a `p` meta line 15px `--fg-2`, 5px above.
+- Bar (`.bar`): sits on the track's first row, spans
+  `grid-column: [first week] / [last week + 1]`, 36px high, pill radius,
+  the bar gradient, flex centred, 16px side padding, position relative.
+  `.bar--mid` is solid `--purple-700`; `.bar--low` is `--lilac`.
+  Milestone (`.ms`): absolutely placed just right of the bar (14px gap),
+  no wrapping, Manrope 500 15px `--fg-2`, preceded by "◆ " at .85em. With
+  `.bar--in` the milestone sits inside the bar instead: static, white 600,
+  ellipsis on overflow (`--ink` text on a low bar).
+- Blackout (`.blackout`, optional, first child of `.gantt__inner`): an
+  absolutely placed band behind the tracks from `--from` to `--to` (week
+  numbers), positioned with `left: calc(var(--label) + 12px + (100% -
+  var(--label) - 12px) * (var(--from) - 1) / var(--weeks))` and the
+  matching width; 14px radius; diagonal hatching (−45deg repeating lines of
+  `rgba(214,201,179,.55)` 2px every 13px) over `rgba(233,223,208,.6)`. Its
+  label: mono 500 13px `--fg-2`, centred at the top.
+- Legend (`.legend`): flex wrap, gap 12px 28px, 15px `--fg-2`, 20px above.
+  Swatches are 38 × 12px rounded bars (bar gradient; `.mid` purple;
+  `.low` lilac) with 10px right margin.
+
+### Market map
+
+- **Rings** (`.rings`): square, full width up to 500px, centred. Three
+  absolutely centred circles: `.ring--3` 100% on `--paper-2` with a 2px
+  dashed `--pink` border (alternatives; label `--magenta`); `.ring--2` 68% on
+  `--paper-3` (category; label `--fg-2`); `.ring--1` 37% on `--ink`
+  (direct; label `--on-dark`, centred vertically). Outer labels sit 14px
+  from the top of their ring: mono 500 12.5px, letter-spacing .12em,
+  uppercase, centred.
+- **Layer list** (`.layer`): 3px left rule (`.layer--1` `--ink`,
+  `.layer--2` `--lilac`, `.layer--3` `--pink`), 18px left padding, 22px
+  below; an `h4` Manrope 700 17px with a `small` qualifier in mono 12px
+  uppercase `--fg-3`; then chips.
+- **Positioning map** (`.pmap`): 16:10, `--paper-2`, 22px radius, overflow
+  hidden; two 1px `--line` rules through the centre — the vertical one at
+  50% from the left, running from 7% below the top to 7% above the bottom;
+  the horizontal one at 50% from the top, running from 5% to 5% of the
+  sides. Axis ends (`.ax--xl`, `.ax--xr` on the horizontal
+  middle, just below the rule; `.ax--yt`, `.ax--yb` at top and bottom, just
+  right of the rule): mono 500 12px, letter-spacing .06em, `--fg-3`, max
+  28% wide.
+- Points (`.pt`): absolutely placed at `left: var(--x)`, `bottom: var(--y)`,
+  centred on that spot, a 13px `--ink` dot then the name in Manrope 600
+  14px, no wrapping, above the gaps. `.pt--you` is a 16px white dot with a
+  3px `--pink` ring and a `--magenta` name. `.pt--right` puts the name on
+  the left of its dot.
+- Gaps (`.gap`): ellipse (aspect 1.6) of width `var(--w, 26%)` centred on
+  `--x`/`--y`, 2px dashed `--pink` border, `rgba(254,86,136,.08)` fill,
+  its chip centred. `.gap--hyp`: `--purple-500` border,
+  `rgba(180,39,163,.05)` fill.
+- **Competitor card** (`.comp`): name `h4` 700 18px; claimed category
+  (`.claim`) mono 500 13px `--purple-700`; a vulnerability block
+  (`.vuln`), 14px above, under a 1px `--line` rule with 12px padding,
+  headed by a `b` label: mono 700 12px, letter-spacing .1em, uppercase,
+  `--magenta`, on its own line.
+
+### Positioning
+
+- **Promise** (`.promise`): `--ink`, 30px radius, padding
+  `clamp(28px,3.4vw,60px)`, position relative, overflow hidden. Its glow
+  is a pseudo-element placed at inset auto −10% −60% 40% with 120% height:
+  a radial gradient from `rgba(254,86,136,.22)` at the centre to
+  transparent at 65%. Content sits above it.
+  Eyebrow, then the promise in a `blockquote`: Manrope 800
+  `clamp(28px,3.1vw,54px)`, line-height 1.08, letter-spacing −.03em, max
+  24ch, its second half in `.grad`. Fallback (`.fallback`) 17px
+  `--on-dark-2`; reasons (`.why`) 15px `--on-dark-3`, max 80ch.
+- **Category matrix** (`.tbl.matrix`): 16px left padding on the first
+  column. The chosen row (`tr.is-chosen`) gets a wash on its cells — a
+  90deg gradient from `rgba(254,86,136,.10)` to `rgba(251,154,106,.05)` —
+  and a 3px `--pink` inset rule on its first cell. Cells hold a light
+  meter (14px segments, gap 4px) and a `small` reading (13px `--fg-3`,
+  6px above).
+- **Pillar** (`.pillar`): a card with its label, an `h4` 700 20px, then the
+  test list (`.test`): no bullets, 1px `--line` top rule, 14px above. Each
+  `li` is a three-column grid (22px · 118px · rest): a mark, the check name
+  in a `b` (mono 500 11.5px uppercase `--fg-3`), the reason in a span
+  14.5px `--fg-2`; rows 9px apart. Marks: "✓" `#11624d` (pass), "◐" `#9a7d00`
+  (`.partial`), "✕" `--magenta` (`.fail`).
+- **Funnel stage** (`.stage`): 3px top rule (`.stage--1` `--purple-700`,
+  `.stage--2` `--pink`, `.stage--3` `--coral`), 16px top padding; label;
+  the dominant message (`.msg`) Manrope 700 `clamp(18px,1.35vw,23px)`;
+  variants as a 15px list.
+- **Anti-messages** (`.anti`, inside a panel): no bullets; each `li` a
+  two-column grid, 14px vertical padding, `--line-dark` bottom rule. The
+  struck line (`s`) is `--on-dark` 600 with a 2px `--pink` strike; the
+  reason (`span`) 15px `--on-dark-2`.
+
+### Demand plan
+
+- **Coverage table** (`.tbl.cov`): stage cells centred, holding dots.
+- **Signal bar** (`.signal`): 10px high, 6px radius, `--paper-3` track,
+  min width 140px; its `i` is the bar-gradient fill from `--from` to `--to`
+  (percentages of the scale). Scale (`.signal-scale`): evenly spaced labels,
+  mono 500 11px `--fg-3`, 6px above.
+- **Engine card** (`.engine`): an `h4` 700 19px; a `.meta` row of chips and
+  sources, 14px above.
+- **Discard** (`.discard`): 1px dashed `--line` border, 14px radius,
+  padding 16px 18px; its `h4` 700 16px struck through in `--magenta` (2px);
+  reason 14.5px `--fg-2`.
+- **Phase** (`.phase`): `--paper-2`, 22px radius, padding 22px 24px, list
+  15.5px `--fg-2`. The first 90 days (`.phase--now`) is `--ink` with
+  `--on-dark-2` text and a `--pink` label.
+
+### Consolidated plan
+
+- **Decision chain** (`.dchain`): five equal columns, gap 10px. Each step:
+  `--ink-2`, 1px `--line-dark` border, 14px radius, padding 18px 18px 20px;
+  a `.label` in `--pink`; the decision in a `p`, Manrope 600 16px
+  `--on-dark`, 10px above. Each step (`.dchain__step`) but the last shows a
+  pink "→" on its right edge, drawn after it.
+- **Contents bar** (`.toc`): sticky at the top, `rgba(250,247,242,.92)`
+  with an 8px backdrop blur, 1px `--line` bottom rule; a scrolling row of
+  links, 14px `--fg-2`, pill hover on `--paper-2`, each with its number in
+  mono 12px `--purple-700`.
+- **Chapter** (`.chapter`): 1px `--line` top rule and
+  `clamp(28px,2.6vw,44px)` top padding; starts a new page in print.
+- **Evidence tiles** (`.evidence`, inside the ledger panel): four columns,
+  gap 12px; each tile 1px `--line-dark` border, 14px radius, 16px padding;
+  a mono 500 12px uppercase `--pink` heading; text 14.5px `--on-dark-2`.
+- **Workstream card** (`.ws`): a card with an `h4` 700 19px and an
+  "If skipped" block (`.skip`), 14px above, under a 1px `--line` rule
+  with 12px padding: a `b` label in mono 700 12px uppercase `--magenta` on
+  its own line, then 15px `--fg-2`.
+
+## Responsive
+
+- Up to 1100px wide: four- and five-column grids and three-column grids
+  become two columns; `.split` and `.split--wide` stack; the decision chain
+  and evidence tiles become two columns and the chain arrows disappear.
+- Up to 680px wide: every grid is one column; anti-message rows stack; the
+  pillar test drops its middle column (check name and reason both in the
+  third); the credit URL loses its auto margin; sources align left; the
+  status pill may wrap and the hero top row stacks; points on the
+  positioning map shrink to 12px with the map at 4:5 and axis labels at
+  10.5px (max 42% wide); tables keep a 620px minimum width and scroll.
+- Never let the page itself scroll sideways: wide things (tables, the
+  Gantt) scroll inside their own wrapper.
+
+## Print
+
+- Page: A4 landscape, no margin. Zoom the document to .62.
+- Keep the desktop columns in print (grids, splits, decision chain,
+  evidence tiles), even though the printed page is narrow.
+- Avoid breaking inside sections, cards, Gantt rows, panels, the promise
+  block and phases. Each chapter of the consolidated plan starts a new page.
+- The contents bar stops being sticky; links lose their underline.

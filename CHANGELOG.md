@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.4.2 — 2026-11-09
+
+The directory refused 0.4.1 as well. Its check judges a file by its
+content, not its name, so Markdown files that were mostly HTML and CSS
+still counted as HTML, which an organization that isn't Verified can't
+ship.
+
+- **The plugin ships no HTML or CSS.** `assets/design-system.md` is now a
+  written specification of the RevOps Studio visual system — tokens, page
+  frame, every component, responsive and print rules, with exact values —
+  and each file in `templates/` is a page blueprint: what goes on the page,
+  in what order, with which component. Claude writes each page's HTML and
+  CSS from them.
+- **One stylesheet per company.** The first deliverable carries the full
+  stylesheet; every later page copies it unchanged, so the set stays
+  consistent.
+- **No shell.** The skill writes each page with a single file write; the
+  `awk`/`sed` assembly and the shell self-check are gone. The self-check is
+  a read-through list.
+
 ## 0.4.1 — 2026-11-09
 
 0.4.0 was refused by the plugin directory: from an organization that isn't

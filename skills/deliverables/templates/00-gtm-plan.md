@@ -1,10 +1,11 @@
-# Template · Consolidated GTM Plan (long document, one file)
+# Page blueprint · Consolidated GTM Plan (long document, one file)
 
-Body fragment that follows the design system (`assets/design-system.md`). Replace ALL Fluxen content.
+The page blueprint: what goes on this page and in what order. Build it with the components in `assets/design-system.md`. Example values come from the fictional Fluxen case; none of them belongs in a real page.
 It consolidates the confirmed step outputs; it never introduces content
 the steps did not confirm.
 
-Slots
+## Slots
+
 - Hero title: "[Company]'s go-to-market plan" + the category bet in .grad.
 - Decision chain (.dchain): the five decisions, one short line each:
   category → promise → engines → channels → commitments (90-day count).
@@ -18,170 +19,38 @@ Slots
   as written by the roadmap step. Factual tone, no call to action, no
   "we can help" — the methodology forbids it here.
 
-## Body
+## Structure
 
-Everything inside the block below is the page body that follows the design
-system. Write it out with this company's content; never copy the block's
-example content.
+1. **Hero.** Eyebrow: GTM Planner · GTM Plan · [Company]. Status pill.
+   Title "[Company]'s go-to-market plan: [the category bet]", the bet in
+   `.grad`; lede: the chain-of-decisions sentence. Under the body row, the
+   `.dchain` with Category, Promise, Engines, Channels, Commitments.
+2. **Contents bar** (`.toc`) with numbered links to the eight chapters.
+3. **01 Executive summary** — a KPI strip, then the summary as a `.lead`.
+4. **02 Business snapshot** — four cards (Offer, ICP, Funnel,
+   Constraints); "Full snapshot →" as a `.more` link in the section head.
+5. **03 Market map** — a `.split`: the map's conclusion as a `.lead`; two
+   cards (the GAP, the GAP HYPOTHESIS marked parked or open).
+6. **04 Positioning** — the promise block with eyebrow "Category [X],
+   confirmed at the gate · core promise"; a grid of pillar cards (label and
+   title, plus flags); the anti-messages as one aside line.
+7. **05 Demand plan** — one `.engine` card per engine (time to first signal
+   as label, name, funnel stage); the discards and spend as one aside line.
+8. **06 Roadmap** — a compact table: # · Initiative · Owner · Result
+   milestone · When; the 12-month outline and parked list as one aside
+   line.
+9. **07 Assumption & evidence ledger** — dark panel. Table: Type ·
+   Question · Confidence · Decision risk (`.risk` when high) ·
+   Recommendation. Then the label "What the plan stands on" and four
+   evidence tiles: User-declared, Connected tools, Cited sources,
+   Inference.
+10. **08 Execution readiness** — aside "This plan decides positioning and
+    demand. It does not build the machinery that converts and operates
+    them."; three `.ws` cards (Conversion design, Deployment,
+    Measurement) with their "If skipped"; the capacity note as a `.lead`.
+11. **Foot** — note on the coherence check; sources line and
+    "consolidated plan".
+12. **Credit strip**, campaign `gtm-plan`.
 
-```html
-<title>GTM Plan — Fluxen</title>
-<meta name="description" content="Go-to-market plan for Fluxen, built with GTM Planner (Go2Rev methodology).">
-</head>
-<body>
-<header class="hero">
-  <div class="wrap">
-    <div class="hero__top">
-      <div class="eyebrow"><span>GTM Planner</span><span>GTM Plan</span><span>Fluxen</span></div>
-      <div class="status">Example · fictional company · figures invented</div>
-    </div>
-    <div class="hero__body">
-      <div>
-        <h1 class="hero__title">Fluxen's go-to-market plan: <span class="grad">audit-ready, beyond the founder network</span></h1>
-        <p class="hero__lede">A GTM plan is a chain of decisions: category → promise → engines → channels → commitments. Each decision builds on the one before.</p>
-      </div>
-    </div>
-    <div class="dchain" style="margin-top:36px" aria-label="The chain of decisions">
-      <div class="dchain__step"><div class="label">Category</div><p>Audit-ready energy intelligence for plants without an energy manager</p></div>
-      <div class="dchain__step"><div class="label">Promise</div><p>Pass every audit and own your energy costs, without hiring an energy manager</p></div>
-      <div class="dchain__step"><div class="label">Engines</div><p>Referrals · audit-deadline ABM · compliance content · integrator pilot</p></div>
-      <div class="dchain__step"><div class="label">Channels</div><p>CS touchpoints · founder-signed LinkedIn + email · SEO assets · partners</p></div>
-      <div class="dchain__step"><div class="label">Commitments</div><p>Six initiatives in 90 days, each with an owner and a result milestone</p></div>
-    </div>
-  </div>
-</header>
-
-<nav class="toc" aria-label="Contents"><div class="wrap">
-  <a href="#summary"><span class="n">1</span>Summary</a><a href="#snapshot"><span class="n">2</span>Snapshot</a><a href="#market"><span class="n">3</span>Market</a>
-  <a href="#positioning"><span class="n">4</span>Positioning</a><a href="#demand"><span class="n">5</span>Demand</a><a href="#roadmap"><span class="n">6</span>Roadmap</a>
-  <a href="#ledger"><span class="n">7</span>Ledger</a><a href="#readiness"><span class="n">8</span>Readiness</a>
-</div></nav>
-
-<main class="wrap">
-  <section class="section" id="summary">
-    <div class="section__head"><h2 class="section__title"><span class="n">01</span>Executive summary</h2></div>
-    <div class="kpis">
-      <div class="kpi"><b>€900k</b><span>ARR today, 14 plants</span></div>
-      <div class="kpi kpi--accent"><b>8 plants</b><span>new in 12 months</span></div>
-      <div class="kpi"><b>32–40</b><span>qualified opportunities needed</span></div>
-      <div class="kpi"><b>≤ €4k</b><span>per month, no marketing hire</span></div>
-    </div>
-    <p class="lead">Fluxen wants 8 new mid-size plants in 12 months while breaking the founder's monopoly on origination. The bet: audit-ready energy intelligence for plants without an energy manager, walking away from the sustainability conversation the giants own and competing instead against spreadsheets and audit panic. At ~25% proposal close on a 2–4 month cycle, that takes 32–40 qualified opportunities against ~20 last year, generated by engines the current team can run: systematized referrals, audit-deadline ABM on ~120 accounts, compliance content that compounds into year 2, and an integrator pilot. The first 90 days commit six initiatives, gated by the founder's capacity of four live opportunities.</p>
-  </section>
-
-  <section class="section chapter" id="snapshot">
-    <div class="section__head"><h2 class="section__title"><span class="n">02</span>Business snapshot</h2><a class="more" href="01-business-snapshot.html">Full snapshot →</a></div>
-    <div class="grid g4">
-      <article class="card"><h3 class="card__title">Offer</h3><p>Energy monitoring, alerts and ISO 50001 reports on existing meters. €12–30k per plant per year, 92% retention.</p></article>
-      <article class="card"><h3 class="card__title">ICP</h3><p>Plants of 50–500 people with ISO 50001 pressure and no energy manager. Buyer: plant manager.</p></article>
-      <article class="card"><h3 class="card__title">Funnel</h3><p>~20 opportunities a year, ~60% from a saturated founder network. No instrumented CRM.</p></article>
-      <article class="card"><h3 class="card__title">Constraints</h3><p>≤ €4k a month, no marketing hire, founder carries ~4 opportunities at once.</p></article>
-    </div>
-  </section>
-
-  <section class="section chapter" id="market">
-    <div class="section__head"><h2 class="section__title"><span class="n">03</span>Market map</h2><a class="more" href="02-market-map.html">Full market map →</a></div>
-    <div class="split">
-      <p class="lead">Giants own the corporate suite, integrators own cheap dashboards that die after handover, Dexma owns building portfolios. The real rival is layer 3: spreadsheets and doing nothing until the audit.</p>
-      <div class="grid g2">
-        <article class="card"><span class="chip chip--gap">GAP</span><h3 class="card__title" style="margin-top:12px">Audit-ready EMS for the plant with no energy manager</h3><p>Relevant, open and reachable with today's evidence.</p></article>
-        <article class="card card--line"><span class="chip chip--hyp">GAP HYPOTHESIS · parked</span><h3 class="card__title" style="margin-top:12px">Multi-plant standardization</h3><p>Needs proof Fluxen does not have yet.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section chapter" id="positioning">
-    <div class="section__head"><h2 class="section__title"><span class="n">04</span>Positioning</h2><a class="more" href="03-positioning.html">Full positioning →</a></div>
-    <div class="promise">
-      <div class="eyebrow">Category B, confirmed at the gate · core promise</div>
-      <blockquote>"Pass every energy audit and own your energy costs, <span class="grad">without hiring an energy manager.</span>"</blockquote>
-    </div>
-    <div class="grid g3" style="margin-top:18px">
-      <article class="card"><div class="q-label">Pillar 1 · decisive</div><h3 class="card__title">Audit-ready by design</h3></article>
-      <article class="card"><div class="q-label">Pillar 2</div><h3 class="card__title">Live in days on your existing meters</h3></article>
-      <article class="card"><div class="q-label">Pillar 3 · supports, never leads</div><h3 class="card__title">Alerts that find money</h3><span class="chip chip--warn">unverified claim</span></article>
-    </div>
-    <p class="section__aside" style="margin-top:14px">Anti-messages: no ESG-platform language, no "easiest EMS" headline, no AI-copilot claims, no price war with integrators.</p>
-  </section>
-
-  <section class="section chapter" id="demand">
-    <div class="section__head"><h2 class="section__title"><span class="n">05</span>Demand plan</h2><a class="more" href="04-demand-plan.html">Full demand plan →</a></div>
-    <div class="grid g4">
-      <article class="card engine"><div class="q-label">&lt; 60 days</div><h4>Customer referral system</h4><p>Conversion, pre-qualified.</p></article>
-      <article class="card engine"><div class="q-label">60–90 days</div><h4>Audit-deadline ABM</h4><p>Consideration to conversion.</p></article>
-      <article class="card engine"><div class="q-label">90–150 days</div><h4>Compliance content capture</h4><p>Captures existing intent; compounds into year 2.</p></article>
-      <article class="card engine"><div class="q-label">90–180 days</div><h4>Integrator co-selling pilot</h4><p>Consideration, through partners.</p></article>
-    </div>
-    <p class="section__aside" style="margin-top:14px">Discarded on benchmark economics: paid search, trade shows, cold email at scale. Channel mix runs on ~€2k a month plus founder time.</p>
-  </section>
-
-  <section class="section chapter" id="roadmap">
-    <div class="section__head"><h2 class="section__title"><span class="n">06</span>Roadmap</h2><a class="more" href="05-roadmap.html">Full roadmap →</a></div>
-    <div class="table-wrap"><table class="tbl">
-      <thead><tr><th>#</th><th>Initiative</th><th>Owner</th><th>Result milestone</th><th>When</th></tr></thead>
-      <tbody>
-        <tr><td>1</td><td class="strong">Pipedrive tags source and stage on every new opportunity</td><td>CS lead</td><td>100% tagged, four weeks running</td><td>W1–3</td></tr>
-        <tr><td>2</td><td class="strong">Three win interviews settle the buying trigger</td><td>Founder</td><td>Trigger confirmed, or positioning revised</td><td>W1–4</td></tr>
-        <tr><td>3</td><td class="strong">Referral system live across the 14 plants</td><td>CS lead + founder</td><td>Three warm intros in pipeline</td><td>W2–8</td></tr>
-        <tr><td>4</td><td class="strong">Audit-deadline ABM list built, wave 1 running</td><td>Founder</td><td>Eight founder-signed conversations opened</td><td>W3–10</td></tr>
-        <tr><td>5</td><td class="strong">Website hero and pitch repositioned to audit-ready</td><td>Founder + freelance</td><td>New hero live, pitch v2 in every meeting</td><td>W2–6</td></tr>
-        <tr><td>6</td><td class="strong">First three compliance assets in production</td><td>Freelance + CTO review</td><td>Three assets drafted, ISO checklist live</td><td>W4–12</td></tr>
-      </tbody>
-    </table></div>
-    <p class="section__aside" style="margin-top:14px">12 months: content and second ABM wave in Q2, conversion design in Q3, scale-or-hold and the hire decision on data in Q4. Parked with reasons: paid search, trade shows, cold email at scale, the multi-plant push.</p>
-  </section>
-
-  <section class="section panel" id="ledger">
-    <div class="section__head">
-      <h2 class="section__title"><span class="n">07</span>Assumption &amp; evidence ledger</h2>
-      <p class="section__aside">Every unresolved question from the five steps. Not trimmed.</p>
-    </div>
-    <div class="table-wrap"><table class="tbl">
-      <thead><tr><th>Type</th><th>Question</th><th>Confidence</th><th>Decision risk</th><th>Recommendation</th></tr></thead>
-      <tbody>
-        <tr><td><span class="chip chip--dark">assumption</span></td><td>A ~25% close rate holds beyond the founder's network</td><td><span class="meter" data-level="1"><i></i><i></i><i></i><b>Low</b></span></td><td><span class="risk">High · the core math</span></td><td class="soft">Review at the first five non-network opportunities</td></tr>
-        <tr><td><span class="chip chip--dark">assumption</span></td><td>The audit deadline is the dominant buying trigger</td><td><span class="meter" data-level="2"><i></i><i></i><i></i><b>Medium</b></span></td><td><span class="risk">High · ABM and awareness</span></td><td class="soft">Win interviews, weeks 1–4</td></tr>
-        <tr><td><span class="chip chip--dark">unverified claim</span></td><td>Quantified savings proof for pillar 3</td><td><span class="meter" data-level="2"><i></i><i></i><i></i><b>Medium</b></span></td><td class="soft">Medium</td><td class="soft">Three cases from the win interviews</td></tr>
-        <tr><td><span class="chip chip--dark">assumption</span></td><td>The 120-account trigger list can be built</td><td><span class="meter" data-level="2"><i></i><i></i><i></i><b>Medium</b></span></td><td class="soft">Medium</td><td class="soft">Validate list size in week 2</td></tr>
-        <tr><td><span class="chip chip--dark">needs benchmark</span></td><td>Referral conversion in industrial SaaS</td><td><span class="meter" data-level="0"><i></i><i></i><i></i><b>—</b></span></td><td class="soft">Low</td><td class="soft">Instrument the funnel from week 1</td></tr>
-      </tbody>
-    </table></div>
-    <div class="label" style="color:var(--fg-on-dark-3);margin:30px 0 14px">What the plan stands on</div>
-    <div class="evidence">
-      <div><b>User-declared</b><p>Funnel numbers, deployment, retention and audit evidence.</p></div>
-      <div><b>Connected tools</b><p>None connected: no CRM export, no Similarweb, no Ahrefs.</p></div>
-      <div><b>Cited sources</b><p>Competitor reads per competitor; channel benchmarks, sector-generic where noted.</p></div>
-      <div><b>Inference</b><p>Traffic estimates and integrator patterns, labeled as such.</p></div>
-    </div>
-  </section>
-
-  <section class="section chapter" id="readiness">
-    <div class="section__head">
-      <h2 class="section__title"><span class="n">08</span>Execution readiness</h2>
-      <p class="section__aside">This plan decides positioning and demand. It does not build the machinery that converts and operates them.</p>
-    </div>
-    <div class="grid g3">
-      <article class="card ws"><div class="q-label">Workstream 1</div><h4>Conversion design</h4><p>Qualification criteria, routing and founder-capacity rules, pipeline stages, the sales playbook. Scheduled for Q3.</p>
-        <div class="skip"><b>If skipped</b>The engines feed a bottleneck, and the plan gets blamed for a conversion problem.</div></article>
-      <article class="card ws"><div class="q-label">Workstream 2</div><h4>Deployment</h4><p>Content production cadence, ABM operations, partner-program mechanics.</p>
-        <div class="skip"><b>If skipped</b>Engines start, then stall on the first busy month.</div></article>
-      <article class="card ws"><div class="q-label">Workstream 3</div><h4>Measurement</h4><p>Source and stage instrumentation (roadmap #1 is the prerequisite), reporting cadence, engine-level review.</p>
-        <div class="skip"><b>If skipped</b>By month three, budget follows opinions.</div></article>
-    </div>
-    <p class="lead" style="margin-top:24px">Executing these workstreams takes either internal revenue-operations capacity or a specialized partner. The roadmap assumes founder time, one CS lead and freelance content; that gap is the thing to audit internally.</p>
-  </section>
-
-  <footer class="foot">
-    <p class="foot__note"><b>Coherence check:</b> plan-qa ran across all five steps before consolidation and passed after one fix (engine 3 had no owner).</p>
-    <p class="foot__src">Zero-connector run · web research + declared inputs<br>Go2Rev methodology · consolidated plan</p>
-  </footer>
-</main>
-
-<a class="credit" href="https://rev-ops.studio/gtm-planner?utm_source=gtm-planner&amp;utm_medium=deliverable&amp;utm_campaign=gtm-plan">
-  <div class="wrap"><span class="credit__mark" aria-hidden="true"></span>
-    <span class="credit__text">Built with <b>GTM Planner</b>, a free Claude plugin by RevOps Studio</span>
-    <span class="credit__url">rev-ops.studio/gtm-planner →</span></div>
-</a>
-</body>
-</html>
-```
+Chapters 2–6 and 8 carry the `.chapter` class (rule above, new page in
+print); the ledger is a dark panel instead.
