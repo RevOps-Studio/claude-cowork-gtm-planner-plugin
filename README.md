@@ -44,8 +44,6 @@ phone, and prints to a clean landscape PDF. The five pages link to each
 other, and the journey ends with the consolidated GTM Plan in the same
 format. Run `/gtm-planner:deliverables` to re-render any of them.
 
-![The 90-day roadmap of the sample case](sample-output/visual/previews/05-roadmap.webp)
-
 The pages follow the same rule as the plan: they show what you confirmed
 and nothing else. No figure appears on a page that is not in the step it
 comes from, and every flag and open question stays visible — a visual that
@@ -92,8 +90,8 @@ Run `/gtm-planner:setup` after installing for a guided walkthrough.
 ### Credentials and privacy
 
 The planner handles no credentials. It ships no build step, no dependencies
-and no runtime of its own — it is Markdown, JSON and static HTML/CSS
-templates. It reads nothing
+and no runtime of its own — it is Markdown and JSON only; its HTML/CSS
+page templates live inside Markdown files. It reads nothing
 from your environment, your shell profile, your `.env` files or your
 keychain, and it sends no token anywhere. Every connector in `.mcp.json` is
 an official remote MCP server from its own vendor, declared as a plain
@@ -113,9 +111,9 @@ policy](https://rev-ops.studio/en/privacy-policy/).
 
 `sample-output/` contains a complete end-to-end case — a fictional company
 taken through all five steps in zero-connector mode, including the
-consolidated GTM Plan with its assumption & evidence ledger, and
-`sample-output/visual/` holds the six pages it produced. If you read one
-thing in this repo, read that. A 60–90s walkthrough lives in
+consolidated GTM Plan with its assumption & evidence ledger. The pages it
+produces are shown on the [plugin's page](https://rev-ops.studio/gtm-planner).
+If you read one thing in this repo, read that. A 60–90s walkthrough lives in
 `demo-script.md`.
 
 ## Quick start

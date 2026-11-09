@@ -1,26 +1,33 @@
-<!--
-  TEMPLATE · Step 3 · Positioning Architecture (one page)
-  Body fragment appended to assets/head.html. Replace ALL Fluxen content.
+# Template · Step 3 · Positioning Architecture (one page)
 
-  Slots
-  - Hero title: the chosen category, with its qualifying half in .grad.
-  - Category decision (.matrix): the 2–3 candidates evaluated, one row each,
-    criteria as columns. Each cell: the value in words + a .meter--light whose
-    data-level shows how FAVOURABLE it is (3 = favourable; low saturation is
-    favourable). The chosen row gets class is-chosen and a "Decision" chip.
-    Below: the decision, what it absorbs, what it gives up deliberately.
-  - Promise: canonical promise in the blockquote, fallback, why believable.
-  - Pillars: 3–4 cards. Each shows the three-part test: li (pass),
-    li.partial (evidence incomplete), li.fail. A pillar with an open
-    unverified-claim gets <span class="chip chip--warn">unverified claim</span>.
-    Never show a pillar that failed the test; say in the aside what was cut.
-  - Segments: primary + up to two secondary, with 3–5 vocabulary chips.
-  - Funnel messages: awareness / consideration / decision, dominant message
-    in .msg, variants (if any) in the list.
-  - Anti-messages: what is not said and why, struck through.
-  - What changes tomorrow: homepage hero, first two minutes of the pitch,
-    content that fits and clashes.
--->
+Body fragment that follows the design system (`assets/design-system.md`). Replace ALL Fluxen content.
+
+Slots
+- Hero title: the chosen category, with its qualifying half in .grad.
+- Category decision (.matrix): the 2–3 candidates evaluated, one row each,
+  criteria as columns. Each cell: the value in words + a .meter--light whose
+  data-level shows how FAVOURABLE it is (3 = favourable; low saturation is
+  favourable). The chosen row gets class is-chosen and a "Decision" chip.
+  Below: the decision, what it absorbs, what it gives up deliberately.
+- Promise: canonical promise in the blockquote, fallback, why believable.
+- Pillars: 3–4 cards. Each shows the three-part test: li (pass),
+  li.partial (evidence incomplete), li.fail. A pillar with an open
+  unverified-claim gets `<span class="chip chip--warn">unverified claim</span>`.
+  Never show a pillar that failed the test; say in the aside what was cut.
+- Segments: primary + up to two secondary, with 3–5 vocabulary chips.
+- Funnel messages: awareness / consideration / decision, dominant message
+  in .msg, variants (if any) in the list.
+- Anti-messages: what is not said and why, struck through.
+- What changes tomorrow: homepage hero, first two minutes of the pitch,
+  content that fits and clashes.
+
+## Body
+
+Everything inside the block below is the page body that follows the design
+system. Write it out with this company's content; never copy the block's
+example content.
+
+```html
 <title>Positioning Architecture — Fluxen</title>
 <meta name="description" content="Positioning Architecture for Fluxen, built with GTM Planner (Go2Rev methodology).">
 </head>
@@ -193,3 +200,4 @@
 </a>
 </body>
 </html>
+```

@@ -1,23 +1,30 @@
-<!--
-  TEMPLATE · Consolidated GTM Plan (long document, one file)
-  Body fragment appended to assets/head.html. Replace ALL Fluxen content.
-  It consolidates the confirmed step outputs; it never introduces content
-  the steps did not confirm.
+# Template · Consolidated GTM Plan (long document, one file)
 
-  Slots
-  - Hero title: "[Company]'s go-to-market plan" + the category bet in .grad.
-  - Decision chain (.dchain): the five decisions, one short line each:
-    category → promise → engines → channels → commitments (90-day count).
-  - TOC: anchors to the eight chapters below. Keep the order.
-  - Chapters 2–6: condensed versions of each step, each ending with a
-    .more link to its one-page deliverable when that file exists.
-  - Chapter 7 (ledger): every unresolved open question from all five steps.
-    Never trim it. "Decision risk" (.risk) for low-confidence items touching
-    category, ICP or engine selection. Evidence map: one tile per source type.
-  - Chapter 8 (execution readiness): the three workstreams + capacity note,
-    as written by the roadmap step. Factual tone, no call to action, no
-    "we can help" — the methodology forbids it here.
--->
+Body fragment that follows the design system (`assets/design-system.md`). Replace ALL Fluxen content.
+It consolidates the confirmed step outputs; it never introduces content
+the steps did not confirm.
+
+Slots
+- Hero title: "[Company]'s go-to-market plan" + the category bet in .grad.
+- Decision chain (.dchain): the five decisions, one short line each:
+  category → promise → engines → channels → commitments (90-day count).
+- TOC: anchors to the eight chapters below. Keep the order.
+- Chapters 2–6: condensed versions of each step, each ending with a
+  .more link to its one-page deliverable when that file exists.
+- Chapter 7 (ledger): every unresolved open question from all five steps.
+  Never trim it. "Decision risk" (.risk) for low-confidence items touching
+  category, ICP or engine selection. Evidence map: one tile per source type.
+- Chapter 8 (execution readiness): the three workstreams + capacity note,
+  as written by the roadmap step. Factual tone, no call to action, no
+  "we can help" — the methodology forbids it here.
+
+## Body
+
+Everything inside the block below is the page body that follows the design
+system. Write it out with this company's content; never copy the block's
+example content.
+
+```html
 <title>GTM Plan — Fluxen</title>
 <meta name="description" content="Go-to-market plan for Fluxen, built with GTM Planner (Go2Rev methodology).">
 </head>
@@ -177,3 +184,4 @@
 </a>
 </body>
 </html>
+```

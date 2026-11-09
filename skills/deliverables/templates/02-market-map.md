@@ -1,32 +1,39 @@
-<!--
-  TEMPLATE · Step 2 · Market Map (one page)
-  Body fragment appended to assets/head.html. Replace ALL Fluxen content.
+# Template · Step 2 · Market Map (one page)
 
-  Slots
-  - Hero title: the map's conclusion in one line (who the real rival is, or
-    where the open space sits). Lede: the executive summary in one sentence.
-  - Three layers: rings stay as they are (labels only change language). The
-    lists hold the names from the confirmed map: layer 1 direct, layer 2
-    category, layer 3 non-competitive alternatives. The callout states where
-    deals are actually lost — only if the map says so.
-  - Positioning map (.pmap): the two axes that differentiate this market.
-      · .ax--xl / .ax--xr = left / right ends of the horizontal axis;
-        .ax--yt / .ax--yb = top / bottom ends of the vertical axis.
-      · Each competitor: <span class="pt" style="--x:12%;--y:85%">Name</span>
-        (x from the left, y from the bottom, 5–95%). Near the right edge add
-        .pt--right so the label sits left of its dot.
-      · The company today: .pt--you, placed where the map honestly says it
-        sits, even if that is "nowhere".
-      · Each [GAP]: <div class="gap" style="--x:80%;--y:20%;--w:26%">
-        <span class="chip chip--gap">GAP</span></div>; each
-        [GAP HYPOTHESIS]: .gap--hyp with <span class="chip chip--hyp">GAP HYPOTHESIS</span>.
-      · Positions are a qualitative reading of the map, not measurements.
-        Keep the "qualitative placement" note under the plot.
-  - Priority competitors: the 3–5 analysed, one card each: claimed category
-    (.claim), promise, strength, vulnerability, source (.src).
-  - Hypotheses: the 2–3 positioning hypotheses with their risk.
-  - Open questions panel + foot + credit, as in every deliverable.
--->
+Body fragment that follows the design system (`assets/design-system.md`). Replace ALL Fluxen content.
+
+Slots
+- Hero title: the map's conclusion in one line (who the real rival is, or
+  where the open space sits). Lede: the executive summary in one sentence.
+- Three layers: rings stay as they are (labels only change language). The
+  lists hold the names from the confirmed map: layer 1 direct, layer 2
+  category, layer 3 non-competitive alternatives. The callout states where
+  deals are actually lost — only if the map says so.
+- Positioning map (.pmap): the two axes that differentiate this market.
+    · .ax--xl / .ax--xr = left / right ends of the horizontal axis;
+      .ax--yt / .ax--yb = top / bottom ends of the vertical axis.
+    · Each competitor: `<span class="pt" style="--x:12%;--y:85%">Name</span>`
+      (x from the left, y from the bottom, 5–95%). Near the right edge add
+      .pt--right so the label sits left of its dot.
+    · The company today: .pt--you, placed where the map honestly says it
+      sits, even if that is "nowhere".
+    · Each [GAP]: `<div class="gap" style="--x:80%;--y:20%;--w:26%">`
+      `<span class="chip chip--gap">GAP</span></div>`; each
+      [GAP HYPOTHESIS]: .gap--hyp with `<span class="chip chip--hyp">GAP HYPOTHESIS</span>`.
+    · Positions are a qualitative reading of the map, not measurements.
+      Keep the "qualitative placement" note under the plot.
+- Priority competitors: the 3–5 analysed, one card each: claimed category
+  (.claim), promise, strength, vulnerability, source (.src).
+- Hypotheses: the 2–3 positioning hypotheses with their risk.
+- Open questions panel + foot + credit, as in every deliverable.
+
+## Body
+
+Everything inside the block below is the page body that follows the design
+system. Write it out with this company's content; never copy the block's
+example content.
+
+```html
 <title>Market Map — Fluxen</title>
 <meta name="description" content="Market Map for Fluxen, built with GTM Planner (Go2Rev methodology).">
 </head>
@@ -189,3 +196,4 @@
 </a>
 </body>
 </html>
+```

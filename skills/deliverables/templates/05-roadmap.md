@@ -1,34 +1,41 @@
-<!--
-  TEMPLATE · Step 5 · 90-day roadmap (one page)
-  Body fragment appended to assets/head.html. Replace ALL Fluxen content.
+# Template · Step 5 · 90-day roadmap (one page)
 
-  Slots
-  - Hero chain (.chain): the funnel worked back from the 12-month goal, using
-    ONLY volumes the demand plan already stated (e.g. meetings → diagnostics →
-    pilots → customers). Last step = the goal, class chain__step--goal.
-    If the demand plan gives fewer stages, show fewer. Never compute new ones.
-  - Lede: "[N] initiatives, each with an owner and one result milestone." +
-    "Week 1 starts on [date]." only if the user gave a start date.
-  - Gantt: one .g-row per 90-day initiative, in the roadmap table's order.
-      · Week header: 13 .g-week cells. With a start date, add <small>DD Mon</small>
-        to odd weeks; without one, plain "W1"…"W13".
-      · .bar grid-column = "[first week] / [last week + 1]". W2–W8 → 2 / 9.
-      · Impact High → .bar · Medium → .bar--mid · Low → .bar--low.
-      · Milestone (.ms) is the initiative's result milestone, shortened to
-        ≤ 7 words. It sits right of the bar; when the bar ends after W8, add
-        .bar--in so it reads inside the bar instead.
-      · Meta line: Owner · Impact H/M/L · Effort L/M/H · "after 1 and 4"
-        (dependencies). Unknown owner → <span class="tbd">Owner to be named</span>.
-      · A bar interrupted by a blocked period = two .bar elements in the same track.
-  - Blackout (optional): a period with no execution the user named
-    (holidays, peak season, a shutdown). <div class="blackout"
-    style="--from:9;--to:11"><span>December peak<br>no outreach</span></div>
-    as the first child of .gantt__inner. Omit it when no such period exists.
-  - Quarters: the 12-month outline, one card per remaining quarter, with the
-    real months when the start date is known. A dated review/gate → .pill-dark.
-  - Foot: parked initiatives with their reasons + the capacity the plan was
-    sized to.
--->
+Body fragment that follows the design system (`assets/design-system.md`). Replace ALL Fluxen content.
+
+Slots
+- Hero chain (.chain): the funnel worked back from the 12-month goal, using
+  ONLY volumes the demand plan already stated (e.g. meetings → diagnostics →
+  pilots → customers). Last step = the goal, class chain__step--goal.
+  If the demand plan gives fewer stages, show fewer. Never compute new ones.
+- Lede: "[N] initiatives, each with an owner and one result milestone." +
+  "Week 1 starts on [date]." only if the user gave a start date.
+- Gantt: one .g-row per 90-day initiative, in the roadmap table's order.
+    · Week header: 13 .g-week cells. With a start date, add `<small>DD Mon</small>`
+      to odd weeks; without one, plain "W1"…"W13".
+    · .bar grid-column = "[first week] / [last week + 1]". W2–W8 → 2 / 9.
+    · Impact High → .bar · Medium → .bar--mid · Low → .bar--low.
+    · Milestone (.ms) is the initiative's result milestone, shortened to
+      ≤ 7 words. It sits right of the bar; when the bar ends after W8, add
+      .bar--in so it reads inside the bar instead.
+    · Meta line: Owner · Impact H/M/L · Effort L/M/H · "after 1 and 4"
+      (dependencies). Unknown owner → `<span class="tbd">Owner to be named</span>`.
+    · A bar interrupted by a blocked period = two .bar elements in the same track.
+- Blackout (optional): a period with no execution the user named
+  (holidays, peak season, a shutdown):
+  `<div class="blackout" style="--from:9;--to:11"><span>December peak<br>no outreach</span></div>`
+  as the first child of .gantt__inner. Omit it when no such period exists.
+- Quarters: the 12-month outline, one card per remaining quarter, with the
+  real months when the start date is known. A dated review/gate → .pill-dark.
+- Foot: parked initiatives with their reasons + the capacity the plan was
+  sized to.
+
+## Body
+
+Everything inside the block below is the page body that follows the design
+system. Write it out with this company's content; never copy the block's
+example content.
+
+```html
 <title>90-day roadmap — Fluxen</title>
 <meta name="description" content="90-day GTM roadmap for Fluxen, built with GTM Planner (Go2Rev methodology).">
 </head>
@@ -130,3 +137,4 @@
 </a>
 </body>
 </html>
+```
